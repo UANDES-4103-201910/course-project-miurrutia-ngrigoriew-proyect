@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: 
+  lastname: 
+  email: 
+  password: 
+  geofence: MyString
+
+two:
+  name: 
+  lastname: 
+  email: 
+  password: 
+  geofence: MyString
