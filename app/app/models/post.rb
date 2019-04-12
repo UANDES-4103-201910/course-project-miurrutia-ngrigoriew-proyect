@@ -4,8 +4,8 @@ class Post < ApplicationRecord
 	has_many :abusive_contents
 	has_many :comments
 
-	validates :title, length: { in: 0..20 , message: "Title should not greater than 20"}
-	validates :description, length: { minimum: 40 , message: "Description should not have less than 40 letters"}
+	validates :title, presence: true, length: { in: 0..80 , message: "Title should not greater than 80"}
+	validates :description, length: { minimum: 1, message: "can't be blank"}
 
 
 end
