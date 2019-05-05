@@ -1,22 +1,172 @@
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-</p>
+
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+
+<style>
+	.btn-secondary{
+		background-color:#F5F5F5;
+		color:#000;
+	}
+</style>
+
+<style>
+	.card-header{
+		background-color:#808080;
+	}
+</style>
+<style>
+	.card-header1{
+		background-color:#D3D3D3;
+	}
+</style>
+
+
+<div class="container bg-grey">
+	<div class="row justify-content-center">
+		<div class="col-12 mb-3">
+			<nav class="navbar navbar-expand-lg navbar-light bg-light">
+				  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+				    <span class="navbar-toggler-icon"></span>
+				  </button>
+				  <a class="navbar-brand" href="#">Oscar</a>
+
+				  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+				    <ul class="navbar-nav mr-auto mt-2 mt-lg-0 navbar-right">
+
+					    <form class="form-inline my-2 my-lg-0">
+					      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+					      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+					    </form>	
+				      <li class="nav-item active">
+				        <a class="nav-link disabled">Username<span class="sr-only">(current)</span></a>
+				      </li>
+				      <li class="nav-item">
+				        <a class="nav-link" href='http://localhost:3000/'>Log out</a>
+				      </li>
+				     
+				    </ul>
+				    
+				  </div>
+				</nav>
+		</div>
+	</div>
+
+	<div class="row mb-4">
+		<div class="col-1">
+		</div>
+	
+		<div class="col-10">
+			<div class="btn-group btn-block" role="group" aria-label="Basic example">
+			  <a style='width:33.3%; color: #000;' type="button" class="btn btn-secondary" href='http://localhost:3000/home2/index'>Home</a>
+			  <a style='width:33.3%; color: #000;' type="button" class="btn btn-secondary" href='http://localhost:3000/posts'>My Posts</a>
+			  <a style='width:33.3%; color: #000;' type="button" class="btn btn-secondary" href='http://localhost:3000/home2/index'>Profile</a>
+			</div>
+		</div>
+		<div class="col-1">
+			
+		</div>
+	</div>
+
+	<div class="row mb-4">
+		<div class="col-1">
+		</div>
+	
+		<div class="col-10">
+			<div class="card">
+				<div class="card-header background-color-light">	
+					<h3><%=@post.title%></h3><i style='font-size:12px' class='fas float-right fixed mt-0'>&#xf086; Share  </i><p class="card-text text-secondary float-right align-top"></p>
+			  	</div>
+
+			  	<div class="card-body justify-content-center">
+			  		<p style="font-size:12px">
+			    	<%=@post.description%></p>
+			    </div>
+
+			    <div class="card-footer">
+			    	<i style='font-size:12px' class='fas float-right ml-4'>  &#xf165;  Downvotes: 5 </i><p class="card-text text-secondary float-right"></p>
+			    	<i style='font-size:12px' class='fas float-right'>  &#xf164;  Upvotes: 123 </i><p class="card-text text-secondary float-right"></p>
+			    	<i style='font-size:12px' class='fas float-left'>&#xf086; Comments: 10  </i><p class="card-text text-secondary float-left"></p><i style='font-size:12px' class='fas float-left ml-4'> &#xf024; Mark as innapropiate  </i><p class="card-text text-secondary float-left"></p>
+			    </div>
+			</div>
+		</div>
+		<div class="col-1">	
+		</div>
+	</div>
+
+	<div class="row mb-4">
+		<div class="col-1">
+		</div>
+	
+		<div class="col-10">
+			<div class="card">
+				<div class="card-header1">	
+					<h4 style='font-size: 16px'>Comment section</h4>
+			  	</div>
+			  	<div class="card-body">
+				  	<div class="card float-left " style="width: 14%" >
+				  		
+					  <div class="card-body float-left" style="height:auto; min-height: 104.9px;">
+					  	<i style='font-size:28px;' class='fas' >&#xf2fe;</i>
+					    <h5 class="card-title" style='font-size: 10px'>Username11123</h5>
+					    <h5 class="card-title" style='font-size:9px'>05-06-2019</h5>
+					  </div>
+					</div>
+
+					<div class="card float-left " style="width: 86%;"  >
+				  		
+					  <div class="card-body float-left" style="height:auto; min-height: 104.9px;">
+					    <h5 class="card-text" style='font-size: 10px'>Anythinh you want to write about the topic above,Anythinh you want to write about the topic above,Anythinh you want to write about the topic above,Anythinh you want to write about the topic above</h5>
+					  </div>
+					</div>
+				</div>
+
+
+				<div class="card-body">
+				  	<div class="card float-left " style="width: 14%" >
+				  		
+					  <div class="card-body float-left" style="height:auto; min-height: 104.9px;">
+					  	<i style='font-size:28px;' class='fas' >&#xf2fe;</i>
+					    <h5 class="card-title" style='font-size: 10px'>Username11123</h5>
+					    <h5 class="card-title" style='font-size:9px'>05-06-2019</h5>
+					  </div>
+					</div>
+
+					<div class="card float-left " style="width: 86%;"  >
+				  		
+						<div class="form-group mt-0 mb-0" style="height: auto; min-height: 104.9px">
+						    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Write your comment"></textarea>
+						</div>
+					</div>
+				</div>
+
+				
+
+				
+			</div>
+		</div>
+		<div class="col-1">	
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-1">
+		</div>
+
+		<div class="col-10">
+			<p class="float-right ml-4"><%= link_to 'Back', posts_path %></p>
+
+			<p class="float-right"><%= link_to 'Edit', edit_post_path(@post) %></p>
+			
+		</div>
+	</div>
  
-<p>
-  <strong>Description:</strong>
-  <%= @post.description %>
-</p>
 
-<p>
-  <strong>City:</strong>
-  <%= @post.city %>
-</p>
-
-<p>
-  <strong>Status:</strong>
-  <%= @post.status %>
-</p>
-
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>

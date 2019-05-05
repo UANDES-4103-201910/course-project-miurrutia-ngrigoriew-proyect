@@ -32,10 +32,10 @@
 					      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
 					    </form>	
 				      <li class="nav-item active">
-				        <a class="nav-link" href="#">Log in<span class="sr-only">(current)</span></a>
+				        <a class="nav-link disabled">Username<span class="sr-only">(current)</span></a>
 				      </li>
 				      <li class="nav-item">
-				        <a class="nav-link" href='http://localhost:3000/users/new'>Sign up</a>
+				        <a class="nav-link" href='http://localhost:3000/'>Log out</a>
 				      </li>
 				     
 				    </ul>
@@ -51,9 +51,9 @@
 	
 		<div class="col-10">
 			<div class="btn-group btn-block" role="group" aria-label="Basic example">
-			  <button style='width:33.3%' type="button" class="btn btn-secondary">Home</button>
-			  <button style='width:33.3%' type="button" class="btn btn-secondary">My Posts</button>
-			  <button style='width:33.3%' type="button" class="btn btn-secondary">Profile</button>
+			  <a style='width:33.3%; color: #000;' type="button" class="btn btn-secondary" href='http://localhost:3000/home2/index'>Home</a>
+			  <a style='width:33.3%; color: #000;' type="button" class="btn btn-secondary" href='http://localhost:3000/posts'>My Posts</a>
+			  <a style='width:33.3%; color: #000;' type="button" class="btn btn-secondary" href='http://localhost:3000/home2/index'>Profile</a>
 			</div>
 		</div>
 		<div class="col-1">
@@ -69,11 +69,11 @@
 				<div class="card-header">
 					
 				<h2>
-		    	<i style='font-size:28px' class='fas'>&#xf1c0;</i> Trending Posts</a></h2>
+		    	<i style='font-size:28px' class='fas'>&#xf1c0;</i> Trending Posts</h2>
 		  		</div>
 		  	<div class="card-body">
 		  		<h2>
-		    	<i style='font-size:34px' class='far'>&#xf1c5;</i> <a class="card-title" href='http://localhost:3000/posts'>Watch out in parking lot</a></h2>
+		    	<i style='font-size:34px' class='far'>&#xf1c5;</i> <a class="card-title" href='http://localhost:3000/posts'><%= link_to 'Watch put in parking lot', post_path(2) %></a></h2>
 		    	<p class="card-text text-secondary">Many cars without handbrake 05-08-2019</p>
 		    	<p style='color:#000' style='font-size:12px' class="card-text float-left">Unsolved</p>
 
