@@ -1,12 +1,8 @@
 class User < ApplicationRecord
-	has_one :user_profile
-	has_many :posts
-	has_many :comments
-	has_many :innapropriate_contents
-	has_many :abusive_contents
 
-	validates :password , length: { in: 9..12}, format: {with: /[A-Za-z0-9]/}
-	validates :email, format: { with: URI::MailTo::EMAIL_REGEXP ,message: "Invalid Email"}
-	validates :name, presence: true
-	validates :lastname, presence: true
+	validates :email, presence: true, format: {with: /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/}, uniqueness: true
+
+	validates :phone, length: {minimum: 9, maximum: 12}, allow_blank: true
+  	validates :password, format: {with: /\A[a-zA-Z0-9\.]{8,12}\z/ , message: "password must be between 8 to 12 alphanumeric characters"}
+
 end

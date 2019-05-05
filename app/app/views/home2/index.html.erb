@@ -9,7 +9,12 @@
 <meta name='viewport' content='width=device-width, initial-scale=1'>
 <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
 
-
+<style>
+	.btn-secondary{
+		background-color:#F5F5F5;
+		color:#000;
+	}
+</style>
 <div class="container bg-grey">
 	<div class="row justify-content-center">
 		<div class="col-12 mb-3">
@@ -45,7 +50,11 @@
 		</div>
 	
 		<div class="col-10">
-			<button type="button" class="btn btn-light btn-lg btn-block">Home</button>
+			<div class="btn-group btn-block" role="group" aria-label="Basic example">
+			  <button style='width:33.3%' type="button" class="btn btn-secondary">Home</button>
+			  <button style='width:33.3%' type="button" class="btn btn-secondary">My Posts</button>
+			  <button style='width:33.3%' type="button" class="btn btn-secondary">Profile</button>
+			</div>
 		</div>
 		<div class="col-1">
 			
