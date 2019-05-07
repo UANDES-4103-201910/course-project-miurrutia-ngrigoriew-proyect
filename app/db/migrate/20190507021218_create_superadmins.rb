@@ -5,6 +5,7 @@ class CreateSuperadmins < ActiveRecord::Migration[5.2]
       t.string :lastname
       t.string :email
       t.string :password
+      t.string :geofence
 
       t.timestamps
     end

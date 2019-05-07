@@ -1,4 +1,15 @@
 Rails.application.routes.draw do
+
+  get 'homesa/index'
+  get 'homea/index'
+  resources :superadmins
+  resources :admins
+  get    '/login',   to: 'sessions#new'
+  post   '/login',   to: 'sessions#create'
+  delete '/logout',  to: 'sessions#destroy'
+
+  get 'sessions/new'
+  get 'login/index'
   resources :users
   get 'home/index'
 

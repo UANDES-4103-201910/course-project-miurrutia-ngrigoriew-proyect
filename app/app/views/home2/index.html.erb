@@ -22,24 +22,26 @@
 				  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
 				    <span class="navbar-toggler-icon"></span>
 				  </button>
-				  <a class="navbar-brand" href="#">Oscar</a>
+				  <a class="navbar-brand" href="http://localhost:3000/home2/index">Oscar</a>
 
 				  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+				  	<% @us.each do |usr|%>
+
 				    <ul class="navbar-nav mr-auto mt-2 mt-lg-0 navbar-right">
 
 					    <form class="form-inline my-2 my-lg-0">
 					      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-					      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+					      <button class="btn btn-outline-success my-2 my-sm-0" type="submit "style="border-color:#009330">Search</button>
 					    </form>	
 				      <li class="nav-item active">
-				        <a class="nav-link disabled">Username<span class="sr-only">(current)</span></a>
+				        <p max-length="21" class="card-text" style="padding: 15px"  ><%=usr.name%></p>
 				      </li>
 				      <li class="nav-item">
-				        <a class="nav-link" href='http://localhost:3000/'>Log out</a>
+				        <p class="nav-link " style="padding-top: 15px"><%= link_to "Log out", logout_path, method: :delete %></p>
 				      </li>
 				     
 				    </ul>
-				    
+				    <%end%>
 				  </div>
 				</nav>
 		</div>
@@ -47,8 +49,7 @@
 
 	<div class="row mb-4">
 		<div class="col-1">
-		</div>
-	
+		</div>	
 		<div class="col-10">
 			<div class="btn-group btn-block" role="group" aria-label="Basic example">
 			  <a style='width:33.3%; color: #000;' type="button" class="btn btn-secondary" href='http://localhost:3000/home2/index'>Home</a>

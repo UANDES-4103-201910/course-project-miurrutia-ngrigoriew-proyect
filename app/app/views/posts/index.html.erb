@@ -29,21 +29,20 @@
           <a class="navbar-brand" href="#">Oscar</a>
 
           <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+            <% @us.each do |usr|%>
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0 navbar-right">
-
               <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="border-color:#009330">Search</button>
               </form> 
               <li class="nav-item active">
-                <a class="nav-link disabled">Username<span class="sr-only">(current)</span></a>
+                <p max-length="21" class="card-text" style="max-width: 80%; max-height: 30px; line-height: 20px; padding: 15px"  ><%=usr.name%></p>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href='http://localhost:3000/'>Log out</a>
               </li>
-             
             </ul>
-            
+            <%end%>
           </div>
         </nav>
     </div>
@@ -78,13 +77,13 @@
           <div class="card-body">
             <h2>
             <i style='font-size:34px' class='far'>&#xf1c5;</i> <a class="card-title"><%= link_to post.title, post_path(post) %></a></h2>
-            <p max-length="5" class="card-text text-secondary " style="max-width: 80%; max-height: 30px;"><%=post.description%></p>
+            <p max-length="21" class="card-text text-secondary " style="max-width: 80%; max-height: 30px;"  ><%=post.description%></p>
             
             <p class="card-text text-secondary float-right ml-4"><%=link_to 'Delete Post', post_path(post),method: :delete,
                 data: { confirm: 'Are you sure?' }%></p>
             <p class="card-text text-secondary float-right "><%=link_to 'Edit Post', edit_post_path(post)%></p>
             <br>
-            <hr style="margin-top:10px; margin-bottom: 5px; width: 90%;"/>
+            <hr style="margin-top:10px; margin-bottom: 5px; width: 90%; border-color: #D0D0D0"/>
             
           </div>
         <%end%>

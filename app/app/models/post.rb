@@ -1,5 +1,5 @@
 class Post < ApplicationRecord
-	##belongs_to :user
+	belongs_to :user
 	has_many :innapropriate_posts
 	has_many :abusive_contents
 	has_many :comments

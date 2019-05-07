@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_04_171754) do
+ActiveRecord::Schema.define(version: 2019_05_07_021218) do
 
   create_table "abusive_contents", force: :cascade do |t|
     t.integer "user_id"
@@ -64,12 +64,14 @@ ActiveRecord::Schema.define(version: 2019_05_04_171754) do
   end
 
   create_table "posts", force: :cascade do |t|
+    t.integer "user_id"
     t.string "title"
     t.string "description"
     t.string "city"
     t.integer "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
   create_table "superadmins", force: :cascade do |t|
@@ -77,6 +79,7 @@ ActiveRecord::Schema.define(version: 2019_05_04_171754) do
     t.string "lastname"
     t.string "email"
     t.string "password"
+    t.string "geofence"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

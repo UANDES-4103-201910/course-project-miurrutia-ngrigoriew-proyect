@@ -1,29 +1,30 @@
 class PostsController < ApplicationController
 
 	def index
-		@posts = Post.all
+    	@us= User.where(["id=?",current_user[:id].to_s])
+		@posts = Post.where(["user_id = ? ", current_user[:id].to_s])
 	end
 
-	def show
-    	@post = Post.find(params[:id])
-  	end	
+	def show   
+    @post = Post.find(params[:id])
+  end	
 
 	def new
 		@post = Post.new
 	end
 
 	def edit
-  		@post = Post.find(params[:id])
+  	@post = Post.find(params[:id])
 	end
 
 	def create
-  		@post = Post.new(post_params)
- 
-  		if @post.save
-    		redirect_to @post
-  		else
-    		render 'new'
-  		end
+		@post = Post.new(post_params)
+    @post.user = current_user
+		if @post.save
+  		redirect_to @post
+		else
+  		render 'new'
+		end
 	end
 
 	def update

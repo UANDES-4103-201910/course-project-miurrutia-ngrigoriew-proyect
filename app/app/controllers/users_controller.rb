@@ -26,12 +26,27 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     user = User.new(user_params)
-    if user.save
-        flash[:notice] = "Created succesfully"
-        redirect_to 'http://localhost:3000/'
+    s1= params[:user][:status1]
+    s2= params[:user][:status2]
+
+    p1= params[:user][:password]
+    p2= params[:user][:cpassword]
+    if p1 == p2
+      if s1 == "1" and s2 =="1"
+        if user.save        
+          redirect_to 'http://localhost:3000/home/index'
+          flash.now[:notice] = "Created succesfully"
+        else
+          redirect_to 'http://localhost:3000/users/new'
+          flash.now[:error] = "Something is wrong while validating"
+        end
+      else
+        
+        redirect_to 'http://localhost:3000/users/new'
+        flash[:error]='Must accept Terms of Service and Use Policy'
+      end
     else
-       flash[:error] = "Something is wrong while validating"
-       redirect_to 'http://localhost:3000/users/new'
+      flash[:error]="Password and Confirm password dont match"
     end
   end
 
