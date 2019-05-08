@@ -68,7 +68,7 @@
 			<div class="btn-group btn-block" role="group" aria-label="Basic example">
 			  <a style='width:33.3%; color: #000;' type="button" class="btn btn-secondary" href='http://localhost:3000/home2/index'>Home</a>
 			  <a style='width:33.3%; color: #000;' type="button" class="btn btn-secondary" href='http://localhost:3000/posts'>My Posts</a>
-			  <a style='width:33.3%; color: #000;' type="button" class="btn btn-secondary" href='http://localhost:3000/home2/index'>Profile</a>
+			  <p style='width:33.3%; color: #000;' type="button" class="btn btn-secondary" ><%= link_to 'Profile', edit_user_path(current_user) %></p>
 			</div>
 		</div>
 		<div class="col-1">

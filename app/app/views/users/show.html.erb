@@ -1,29 +1,141 @@
-<p id="notice"><%= notice %></p>
+<body>
+  <style>
+    .body{
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+  
+  <div class="body bg-success">
 
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-<p>
-  <strong>Lastname:</strong>
-  <%= @user.lastname %>
-</p>
 
-<p>
-  <strong>Phone:</strong>
-  <%= @user.phone %>
-</p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
+    <%= form_with(model: @user, local: true) do |form| %>
 
-<p>
-  <strong>Password:</strong>
-  <%= @user.password %>
-</p>
+    <style>
+      .my-container{
+        border: 1px solid green;
+      }
+    </style>
+    <div class="container my-container rounded bg-white">
+      <div class="row justify-content-center">
+        <div class="col-7 offset-4  mb-4">
+          <h1>Profile</h1>
+        </div>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+        <div class="col-1">
+          <h1><%= link_to 'X', controller:'home2' %></h1>
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="col-3">
+          <div class="mb-4">
+              <%= form.label 'Name'%>
+            </div>
+          </div>
+
+          <div class="col-6">
+          <div class="input-group" >
+            <%= form.text_field :name , class:"form-control"%>
+          </div>
+
+        </div>
+        <hr />
+      </div>
+
+      <div class="row">
+        <div class="col-3">
+          <div class="mb-4">
+              <%= form.label 'Last Name'%>
+            </div>
+          </div>
+
+          <div class="col-6">
+          <div class="input-group" >
+            <%= form.text_field :lastname , class:"form-control"%>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-3">
+          <div class="mb-4">
+              <%= form.label 'Email'%>
+            </div>
+          </div>
+
+          <div class="col-6">
+          <div class="input-group" >
+            <%= form.text_field :email , class:"form-control"%>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-3">
+          <div class="mb-4">
+              <%= form.label 'Password'%>
+            </div>
+          </div>
+
+          <div class="col-6">
+          <div class="input-group" >
+            <%= form.password_field :password , class:"form-control"%>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-3">
+          <div class="mb-4">
+              <%= form.label 'Confirm Password'%>
+            </div>
+          </div>
+
+          <div class="col-6">
+          <div class="input-group" >
+            <%= form.password_field :cpassword , class:"form-control"%>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-3">
+          <div class="mb-4">
+            </div>
+          </div>
+
+          <div class="col-4">
+          <div class="actions">
+              <p style=' color: #000; background-color: #FFF; border: 1px solid green ' type="button" class="btn " ><%=link_to 'Edit User', edit_user_path(current_user)%></p>
+            </div>
+
+        </div>
+      </div>
+
+      
+
+
+
+      
+    </div>
+
+
+
+        
+
+
+
+      
+    <% end %>
+  </div>
+</body>

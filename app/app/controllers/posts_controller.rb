@@ -6,24 +6,24 @@ class PostsController < ApplicationController
 	end
 
 	def show   
-    @post = Post.find(params[:id])
-  end	
+    	@post = Post.find(params[:id])
+ 	end	
 
 	def new
 		@post = Post.new
 	end
 
 	def edit
-  	@post = Post.find(params[:id])
+  		@post = Post.find(params[:id])
 	end
 
 	def create
 		@post = Post.new(post_params)
-    @post.user = current_user
+    	@post.user = current_user
 		if @post.save
-  		redirect_to @post
+  			redirect_to @post
 		else
-  		render 'new'
+  			render 'new'
 		end
 	end
 

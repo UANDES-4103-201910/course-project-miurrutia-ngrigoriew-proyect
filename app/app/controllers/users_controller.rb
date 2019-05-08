@@ -11,6 +11,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    @user = User.find(params[:id])
   end
 
   # GET /users/new
@@ -20,6 +21,9 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+    
+    @user = User.find(params[:id])
+
   end
 
   # POST /users
@@ -54,12 +58,21 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1.json
   def update
     @user = User.find(params[:id])
-    if @user.update(user_params)
-      flash[:notice] = "Updated succesfully"
-      redirect_to 'http://localhost:3000/'
+
+    pa1= current_user[:password]
+    pa2= params[:user][:cpassword]
+
+    if pa1==pa2
+      if @user.update(user_params)
+        flash[:notice] = "Updated succesfully"
+        redirect_to 'http://localhost:3000/home2/index'
+      else
+        flash[:error] = "Something went wrong 2"
+        redirect_to edit_user_path(current_user)
+      end
     else
-      flash[:error] = "Something went wrong"
-      redirect_to :edit
+        flash[:error] = "Password different from Confirm password"
+        redirect_to edit_user_path(current_user)
     end
   end
 
