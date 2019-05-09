@@ -1,6 +1,21 @@
 Integrantes:
 Nicolas Grigoriew
 Maria Ignacia Urrutia
+
+Implemented features:
+	-User Log in
+	-Create post
+	-Edit post
+	-Create user 
+	-Show post
+
+Pending:
+	-Search
+	-Edit user
+	-Show comments
+
+
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
