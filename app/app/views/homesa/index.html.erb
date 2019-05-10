@@ -1,130 +1,141 @@
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>WebPage</title>
+    
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 		  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-<meta name='viewport' content='width=device-width, initial-scale=1'>
-<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+	<meta name='viewport' content='width=device-width, initial-scale=1'>
+	<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+	<style>
+		.btn-secondary{
+			background-color:#F5F5F5;
+			color:#000;
+		}
+	</style>
+  </head>
 
-<style>
-	.btn-secondary{
-		background-color:#F5F5F5;
-		color:#000;
-	}
-</style>
-<div class="container bg-grey">
-	<div class="row justify-content-center">
-		<div class="col-12 mb-3">
-			<nav class="navbar navbar-expand-lg navbar-light bg-light">
-				  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-				    <span class="navbar-toggler-icon"></span>
-				  </button>
-				  <a class="navbar-brand" href="http://localhost:3000/home2/index">Oscar</a>
+  <body>
+	<div class="container bg-grey">
+		<div class="row justify-content-center">
+			<div class="col-12 mb-3">
+				<nav class="navbar navbar-expand-lg navbar-light bg-light">
+					  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+					    <span class="navbar-toggler-icon"></span>
+					  </button>
+					  <a class="navbar-brand" href="http://localhost:3000/home2/index">Oscar</a>
 
-				  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-				  	<% @us.each do |usr|%>
+					  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+					  	<% @us.each do |usr|%>
 
-				    <ul class="navbar-nav mr-auto mt-2 mt-lg-0 navbar-right">
+					    <ul class="navbar-nav mr-auto mt-2 mt-lg-0 navbar-right">
 
-					    <form class="form-inline my-2 my-lg-0">
-					      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-					      <button class="btn btn-outline-success my-2 my-sm-0" type="submit "style="border-color:#009330">Search</button>
-					    </form>	
-				      <li class="nav-item active">
-				        <p max-length="21" class="card-text" style="padding: 15px"  ><%=usr.name%></p>
-				      </li>
-				      <li class="nav-item">
-				        <p class="nav-link " style="padding-top: 15px"><%= link_to "Log out", logout_path, method: :delete %></p>
-				      </li>
-				     
-				    </ul>
-				    <%end%>
-				  </div>
-				</nav>
-		</div>
-	</div>
-
-	<div class="row mb-4">
-		<div class="col-1">
-		</div>	
-		<div class="col-10">
-			<div class="btn-group btn-block" role="group" aria-label="Basic example">
-			  <a style='width:14.285%; color: #000;' type="button" class="btn btn-secondary" href='http://localhost:3000/home2/index'>Home</a>
-			  <a style='width:14.285%; color: #000;' type="button" class="btn btn-secondary" href='http://localhost:3000/posts'>Posts</a>
-			  <a style='width:14.285%; color: #000;' type="button" class="btn btn-secondary" href='http://localhost:3000/home2/index'>Blacklist</a>
-			  <a style='width:14.285%; color: #000;' type="button" class="btn btn-secondary" href='http://localhost:3000/home2/index'>Dumpster</a>
-			  <a style='width:14.285%; color: #000;' type="button" class="btn btn-secondary" href='http://localhost:3000/home2/index'>Users</a>
-			  <a style='width:14.285%; color: #000;' type="button" class="btn btn-secondary" href='http://localhost:3000/home2/index'>Admins</a>
-			  <p style='width:14.285%; color: #000;' type="button" class="btn btn-secondary" ><%= link_to 'Profile', edit_user_path(current_user) %></p>			
+						    <form class="form-inline my-2 my-lg-0">
+						      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+						      <button class="btn btn-outline-success my-2 my-sm-0" type="submit "style="border-color:#009330">Search</button>
+						    </form>	
+					      <li class="nav-item active">
+					        <p class="card-text" style="padding: 15px"  ><%=usr.name%></p>
+					      </li>
+					      <li class="nav-item">
+					        <p class="nav-link " style="padding-top: 15px"><%= link_to "Log out", logout_path, method: :delete %></p>
+					      </li>
+					     
+					    </ul>
+					    <%end%>
+					  </div>
+					</nav>
 			</div>
 		</div>
-		<div class="col-1">
+
+		<div class="row mb-4">
+			<div class="col-1">
+			</div>	
+			<div class="col-10">
+				<div class="btn-group btn-block" role="group" aria-label="Basic example">
+				  <a style='width:14.285%; color: #000;' class="btn btn-secondary" href='http://localhost:3000/home2/index'>Home</a>
+				  <a style='width:14.285%; color: #000;'  class="btn btn-secondary" href='http://localhost:3000/posts'>Posts</a>
+				  <a style='width:14.285%; color: #000;'  class="btn btn-secondary" href='http://localhost:3000/home2/index'>Blacklist</a>
+				  <a style='width:14.285%; color: #000;'  class="btn btn-secondary" href='http://localhost:3000/home2/index'>Dumpster</a>
+				  <a style='width:14.285%; color: #000;'  class="btn btn-secondary" href='http://localhost:3000/home2/index'>Users</a>
+				  <a style='width:14.285%; color: #000;'  class="btn btn-secondary" href='http://localhost:3000/home2/index'>Admins</a>
+				  <p style='width:14.285%; color: #000;'  class="btn btn-secondary" ><%= link_to 'Profile', edit_user_path(current_user) %></p>			
+				</div>
+			</div>
+			<div class="col-1">
+				
+			</div>
+		</div>
+
+		<div class="row mb-4">
+			<div class="col-1">
+			</div>
+			<div class="col-10">
+				<div class="card">
+					<div class="card-header">
+						
+						<h2>
+				    	<i style='font-size:28px' class='fas'>&#xf1c0;</i> Trending Posts</h2>
+			  		</div>
+			  	<div class="card-body">
+			  		<h2>
+			    	<i style='font-size:34px' class='far'>&#xf1c5;</i> <a class="card-title" href='http://localhost:3000/posts'><%= link_to 'Watch put in parking lot', post_path(2) %></a></h2><label><input type="checkbox" value="">Solved</label>
+			    	<p class="card-text text-secondary">Many cars without handbrake 05-08-2019</p>
+			    	<p style='color:#000; font-size:12px' class="card-text float-left">Unsolved</p>
+
+			    	<i style='font-size:12px' class='fas float-right'>|  &#xf164;  Upvotes: 123 </i><p class="card-text text-secondary float-right"></p>
+			    	<i style='font-size:12px' class='fas float-right'>&#xf086; Comments: 2134  </i><p class="card-text text-secondary float-right"></p>	
+			    </div>
+				</div>
+			</div>
 			
+	  
 		</div>
-	</div>
 
-	<div class="row mb-4">
-		<div class="col-1">
-		</div>
-		<div class="col-10">
-			<div class="card">
-				<div class="card-header">
-					
-					<h2>
-			    	<i style='font-size:28px' class='fas'>&#xf1c0;</i> Trending Posts</h2>
-		  		</div>
-		  	<div class="card-body">
-		  		<h2>
-		    	<i style='font-size:34px' class='far'>&#xf1c5;</i> <a class="card-title" href='http://localhost:3000/posts'><%= link_to 'Watch put in parking lot', post_path(2) %></a></h2><label><input type="checkbox" value="">Solved</label>
-		    	<p class="card-text text-secondary">Many cars without handbrake 05-08-2019</p>
-		    	<p style='color:#000' style='font-size:12px' class="card-text float-left">Unsolved</p>
-
-		    	<i style='font-size:12px' class='fas float-right'>|  &#xf164;  Upvotes: 123 </i><p class="card-text text-secondary float-right"></p>
-		    	<i style='font-size:12px' class='fas float-right'>&#xf086; Comments: 2134  </i><p class="card-text text-secondary float-right"></p>	
-		    </div>
+		<div class="row mb-3">
+			<div class="col-1">
 			</div>
-		</div>
-		
-  
-	</div>
+			<div class="col-10">
+				<div class="card">
+					<div class="card-header">
+						<h2>
+				    	<i style='font-size:28px' class='fas'>&#xf1c0;</i> Topics</h2>
+			  		</div>
 
-	<div class="row mb-3">
-		<div class="col-1">
-		</div>
-		<div class="col-10">
-			<div class="card">
-				<div class="card-header">
-					<h2>
-			    	<i style='font-size:28px' class='fas'>&#xf1c0;</i> Topics</a></h2>
-		  		</div>
-
-		  	<ul class="list-group list-group-flush">
-			    <li class="list-group-item">
-			    	<div class="card-body">
-			    		<h2><i style='font-size:34px' class='far'>&#xf0c5;</i> <a class="card-title" href='http://localhost:3000/posts'> General</a></h2>
-			    		<i style='font-size:12px' class='fas float-right'>  &#xf02c; Posts: 1342</i><p class="card-text text-secondary float-right"></p> 	    	
-		    		</div>
-				</li>
-			    <li class="list-group-item">
-			    	<div class="card-body">
-		    			<h2><i style='font-size:34px' class='far'>&#xf0c5;</i> <a class="card-title" href='http://localhost:3000/posts'> Universidad de los Andes</a></h2>
-		    			<i style='font-size:12px' class='fas float-right'>  &#xf02c; Posts: 1031</i><p class="card-text text-secondary float-right"></p> 
-		    		</div>
-				</li>
-			    <li class="list-group-item">
-			    	<div class="card-body">
-		    			<h2><i style='font-size:34px' class='far'>&#xf0c5;</i> <a class="card-title" href='http://localhost:3000/posts'> Public transportation</a></h2>
-		    			<i style='font-size:12px' class='fas float-right'>  &#xf02c; Posts: 1124</i><p class="card-text text-secondary float-right"></p>		    	
-		    		</div>
-				</li>
- 			</ul>
+			  	<ul class="list-group list-group-flush">
+				    <li class="list-group-item">
+				    	<div class="card-body">
+				    		<h2><i style='font-size:34px' class='far'>&#xf0c5;</i> <a class="card-title" href='http://localhost:3000/posts'> General</a></h2>
+				    		<i style='font-size:12px' class='fas float-right'>  &#xf02c; Posts: 1342</i><p class="card-text text-secondary float-right"></p> 	    	
+			    		</div>
+					</li>
+				    <li class="list-group-item">
+				    	<div class="card-body">
+			    			<h2><i style='font-size:34px' class='far'>&#xf0c5;</i> <a class="card-title" href='http://localhost:3000/posts'> Universidad de los Andes</a></h2>
+			    			<i style='font-size:12px' class='fas float-right'>  &#xf02c; Posts: 1031</i><p class="card-text text-secondary float-right"></p> 
+			    		</div>
+					</li>
+				    <li class="list-group-item">
+				    	<div class="card-body">
+			    			<h2><i style='font-size:34px' class='far'>&#xf0c5;</i> <a class="card-title" href='http://localhost:3000/posts'> Public transportation</a></h2>
+			    			<i style='font-size:12px' class='fas float-right'>  &#xf02c; Posts: 1124</i><p class="card-text text-secondary float-right"></p>		    	
+			    		</div>
+					</li>
+	 			</ul>
+				</div>
 			</div>
 		</div>
 	</div>
-</div>
+</body>
+</html>
 
 
 

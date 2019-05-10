@@ -13,7 +13,7 @@ superadmin1 = User.create(name:"Sofia", lastname:"Pavicevic", email:"sadmin@miua
 
 post1 = Post.create(user_id:user1.id,title:"car parked wrongly", description:"Stupid owner", city:"Santiago", status:1)
 post2 = Post.create(user_id:user2.id,title:"Watch out in parking lot", description:"Hatefull community", city:"Santiago", status:1)
-post2 = Post.create(user_id:user1.id,title:"Things i hate", description:"Stupid people", city:"Concepcion", status:1)
+post3 = Post.create(user_id:user1.id,title:"Things i hate", description:"Stupid people", city:"Concepcion", status:1)
 
 
 comment1 = Comment.create(user_id:user2.id, post_id:post1.id)
