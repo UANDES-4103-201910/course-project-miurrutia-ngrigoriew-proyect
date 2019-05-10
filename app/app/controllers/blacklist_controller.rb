@@ -31,6 +31,7 @@ class BlacklistController < ApplicationController
 			redirect_to @blacklist
 		else
 			render 'edit'
+		end
 	end
 
 	def destroy

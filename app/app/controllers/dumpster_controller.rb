@@ -20,7 +20,7 @@ class DumpsterController < ApplicationController
 		if @dumpster.save
 			redirect_to @dumpster
 		else
-			render 'new'
+			render :new
 		end
 	end
 
@@ -30,15 +30,16 @@ class DumpsterController < ApplicationController
 		if @dumpster.update(dumpster_params)
 			redirect_to @dumpster
 		else
-			render 'edit'
+			render :edit
+		end
 	end
 
 	def destroy
 		Dumpster.find(params[:id]).destroy
 	end
 
-	private
-		def dumpster_params
-			params.require(:dumpster).permit(:post)
-		end
+	
+	def dumpster_params
+		params.require(:dumpster).permit(:post)
+	end
 end

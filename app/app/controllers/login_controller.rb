@@ -17,6 +17,24 @@ class LoginController < ApplicationController
 		flash[:error] = 'Invalid email/password combination'
 		render :new
 	end
+	
+	if admin && admin[:password] == par
+		cookies[:log_in]=admin
+		redirect_to admin
+		flash[:notice] = 'Logged in'
+	else
+		flash[:error] = 'Invalid email/password combination'
+		render :new
+	end
+
+	if superadmin && superadmin[:password] == par
+		cookies[:log_in]=superadmin
+		redirect_to superadmin
+		flash[:notice] = 'Logged in'
+	else
+		flash[:error] = 'Invalid email/password combination'
+		render :new
+	end
   end
 
   def destroy

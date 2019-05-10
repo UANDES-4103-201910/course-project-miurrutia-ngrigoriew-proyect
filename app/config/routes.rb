@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'homea/index'
   resources :superadmins
   resources :admins
+
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
@@ -12,6 +13,7 @@ Rails.application.routes.draw do
   get 'login/index'
   resources :users
   get 'home/index'
+  get 'users/index'
 
   resources :posts
 
@@ -19,6 +21,11 @@ Rails.application.routes.draw do
 
   get 'home2/index'
   root 'home2#index'
+
+  resources :dumpster
+  get 'dumpster/index'
+  resources :blacklist
+  get 'blacklist/index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
 end
