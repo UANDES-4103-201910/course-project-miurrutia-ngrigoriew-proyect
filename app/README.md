@@ -8,11 +8,13 @@ Implemented features:
 	-Edit post
 	-Create user 
 	-Show post
+	-User log out
 
 Pending:
 	-Search
 	-Edit user
-	-Show comments
+	-Edit dumpster
+	-Edit blacklist
 
 
 
