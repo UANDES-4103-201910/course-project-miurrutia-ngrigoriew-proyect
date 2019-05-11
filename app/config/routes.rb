@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'atotal/index'
+  get 'utotal/index'
   get 'homesa/index'
   get 'homea/index'
   resources :superadmins

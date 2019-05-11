@@ -1,42 +1,29 @@
-Integrantes:
-Nicolas Grigoriew
-Maria Ignacia Urrutia
+Members: Nicolas Grigoriew Maria Ignacia Urrutia
 
-Implemented features:
-	-User Log in
-	-Create post
-	-Edit post
-	-Create user 
-	-Show post
-	-User log out
+Implemented features: 
+-Sign up/create user  
+-User Log in 
+-CRUD POST
+-CRUD User 
+-Profile 
+-User log out  
+-Post for current user
 
-Pending:
-	-Search
-	-Edit user
-	-Edit dumpster
-	-Edit blacklist
+Pending: 
+-Search 
+-Edit dumpster 
+-Edit blacklist 
+-Complete fluent navigation 
+-Postman
+
+Basic instructions
+
+Register: Complete all fields and password must be 8-12 alphanumeric
+
+Users: miurrutia2@miuandes.cl Password: ignacia12345
+
+To log in as a admin: User: admin@miuandes.cl   Password: hola123456
+
+To log in as a Super admin: User: sadmin@miuandes.cl   Password: hola654321
 
 
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...

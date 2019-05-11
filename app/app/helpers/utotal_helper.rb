@@ -1,0 +1,2 @@
+module UtotalHelper
+end
