@@ -35,50 +35,6 @@
 
   <body>
 	<div class="container bg-grey">
-		<div class="row justify-content-center">
-			<div class="col-12 mb-3">
-				<nav class="navbar navbar-expand-lg navbar-light bg-light">
-					  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-					    <span class="navbar-toggler-icon"></span>
-					  </button>
-					  <a class="navbar-brand" href="#">Oscar</a>
-
-					  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-					    <ul class="navbar-nav mr-auto mt-2 mt-lg-0 navbar-right">
-
-						    <form class="form-inline my-2 my-lg-0">
-						      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-						      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-						    </form>	
-					      <li class="nav-item active">
-					        <a class="nav-link disabled">Username<span class="sr-only">(current)</span></a>
-					      </li>
-					      <li class="nav-item">
-					        <a class="nav-link" href='http://localhost:3000/'>Log out</a>
-					      </li>
-					     
-					    </ul>
-					    
-					  </div>
-					</nav>
-			</div>
-		</div>
-
-		<div class="row mb-4">
-			<div class="col-1">
-			</div>
-		
-			<div class="col-10">
-				<div class="btn-group btn-block" role="group" aria-label="Basic example">
-				  <a style='width:33.3%; color: #000;' class="btn btn-secondary" href='http://localhost:3000/home2/index'>Home</a>
-				  <a style='width:33.3%; color: #000;' class="btn btn-secondary" href='http://localhost:3000/posts'>My Posts</a>
-				  <p style='width:33.3%; color: #000;' class="btn btn-secondary" ><%= link_to 'Profile', edit_user_path(current_user) %></p>
-				</div>
-			</div>
-			<div class="col-1">
-				
-			</div>
-		</div>
 
 		<div class="row mb-4">
 			<div class="col-1">
@@ -87,7 +43,7 @@
 			<div class="col-10">
 				<div class="card">
 					<div class="card-header background-color-light">	
-						<h3><%=@post.title%></h3><i style='font-size:12px' class='fas float-right fixed mt-0'>&#xf086; Share  </i><p class="card-text text-secondary float-right align-top"></p>
+						<h3><%=@post.title%></h3><i style='font-size:12px' class='fas float-right fixed mt-0'>&#xf086; Share  </i><p class="card-text text-secondary float-right align-top"></p><%= @post.created_at%>
 				  	</div>
 
 				  	<div class="card-body justify-content-center">
