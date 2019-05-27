@@ -17,7 +17,13 @@ Rails.application.routes.draw do
   get 'home/index'
   get 'users/index'
 
-  resources :posts
+  resources :posts do
+    resources :comments
+  end
+
+  resources :users do
+    resources :comments
+  end
 
   root 'home#index'
 

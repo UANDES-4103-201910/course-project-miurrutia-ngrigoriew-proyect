@@ -32,7 +32,10 @@
     }
   </style>
   </head>
-
+  <style>.text_area{
+  	width: 100%;
+  }
+  </style>
   <body>
 	<div class="container bg-grey">
 
@@ -71,42 +74,51 @@
 					<div class="card-header1">	
 						<h4 style='font-size: 16px'>Comment section</h4>
 				  	</div>
-				  	<div class="card-body">
-					  	<div class="card float-left " style="width: 14%" >
-					  		
-						  <div class="card-body float-left" style="height:auto; min-height: 104.9px;">
-						  	<i style='font-size:28px;' class='fas' >&#xf2fe;</i>
-						    <h5 class="card-title" style='font-size: 10px'>Username11123</h5>
-						    <h5 class="card-title" style='font-size:9px'>05-06-2019</h5>
-						  </div>
+				  	<% @post.comments.each do |comment| %>
+
+					  	<div class="card-body">
+						  	<div class="card float-left " style="width: 14%" >
+						  		
+							  <div class="card-body float-left" style="height:auto; min-height: 104.9px;">
+							  	<i style='font-size:28px;' class='fas' >&#xf2fe;</i>
+							    <h5 class="card-title" style='font-size: 10px'><%=comment.user_id%></h5>
+							    <h5 class="card-title" style='font-size:9px'><%=comment.created_at%></h5>
+							  </div>
+							</div>
+
+							<div class="card float-left " style="width: 86%;"  >
+						  		
+							  <div class="card-body float-left" style="height:auto; min-height: 104.9px;">
+							    <h5 class="card-text" style='font-size: 10px'><%=comment.body%></h5>
+							  </div>
+							  
+							</div>
+							<p class="float-right">
+								  <%= link_to 'Destroy Comment', [comment.post, comment],
+								               method: :delete,
+								               data: { confirm: 'Are you sure?' } %>
+							</p>
 						</div>
-
-						<div class="card float-left " style="width: 86%;"  >
-					  		
-						  <div class="card-body float-left" style="height:auto; min-height: 104.9px;">
-						    <h5 class="card-text" style='font-size: 10px'>Anythinh you want to write about the topic above,Anythinh you want to write about the topic above,Anythinh you want to write about the topic above,Anythinh you want to write about the topic above</h5>
-						  </div>
-						</div>
-					</div>
+					<%end%>
 
 
-					<div class="card-body">
-					  	<div class="card float-left " style="width: 14%" >
-					  		
-						  <div class="card-body float-left" style="height:auto; min-height: 104.9px;">
-						  	<i style='font-size:28px;' class='fas' >&#xf2fe;</i>
-						    <h5 class="card-title" style='font-size: 10px'>Username11123</h5>
-						    <h5 class="card-title" style='font-size:9px'>05-06-2019</h5>
-						  </div>
-						</div>
+					<%= form_with(model: [ @post, @post.comments.build ], local: true) do |form| %>
+					  	<div class="card-body">
+						  	<div class="card float-left " style="width: 14%" >
+						  		
+							  <div class="card-body float-left" style="height:auto; min-height: 104.9px;">
+							  	<i style='font-size:28px;' class='fas' >&#xf2fe;</i>
+							    <h5 class="card-title" style='font-size: 10px'><%=current_user.name%></h5>
+							    <h5 class="card-title" style='font-size:9px'><%= DateTime.now%></h5>
+							  </div>
+							</div>
 
-						<div class="card float-left " style="width: 86%;"  >
-					  		
-							<div class="form-group mt-0 mb-0" style="height: auto; min-height: 104.9px">
-							    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Write your comment"></textarea>
+							<div class="card float-left " style="width: 86%;"  >
+						  		
+								<div class="form-group mt-0 mb-0" style="height: auto; min-height: 104.9px"><p><%= form.text_area :body%></p><p><%= form.submit%></div>
 							</div>
 						</div>
-					</div>
+					<%end%>	
 
 					
 

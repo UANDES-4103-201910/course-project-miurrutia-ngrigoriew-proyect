@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
         cookies[:log_in]=user
         log_in user
         redirect_to 'http://localhost:3000/homea/index'
-        flash[:notice] = 'Logged in successfully'
+        flash[:notice]
       
       elsif user[:email] == 'sadmin@miuandes.cl'
         cookies[:log_in]=user
