@@ -1,141 +1,124 @@
-<body>
-  <style>
-    .body{
-      width: 100%;
-      height: 100%;
-    }
-  </style>
-  
-  <div class="body ">
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>WebPage</title>
+    
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+  <style>
+    .btn-secondary{
+      background-color:#F5F5F5;
+      color:#000;
+    }
+  </style>
+  <style>
+  .card-header{
+    background-color:#808080;
+    }
+  </style>
+  <style>
+    .card-header1{
+      background-color:#D3D3D3;
+    }
+  </style>
+  </head>
+  <style>.text_area{
+  	width: 100%;
+  }
+  </style>
+  <body>
+	<div class="container bg-grey">
+
+		<div class="row mb-4">
+			<div class="col-1">
+			</div>
+		
+			<div class="col-10">
+				<div class="card">
+					<div class="card-header background-color-light">	
+						<h3><%=current_user.id%></h3><i style='font-size:12px' class='fas float-right fixed mt-0'>&#xf086; Share  </i><p class="card-text text-secondary float-right align-top"></p><%= current_user.created_at%>
+				  	</div>
+
+				  	<div class="card-body justify-content-center">
+				  		<p style="font-size:12px">
+				    	<%=current_user.name%></p>
+				    </div>
+
+				    <div class="card-footer">
+				    	<i style='font-size:12px' class='fas float-right ml-4'>  &#xf165;  Downvotes: 5 </i><p class="card-text text-secondary float-right"></p>
+				    	<i style='font-size:12px' class='fas float-right'>  &#xf164;  Upvotes: 123 </i><p class="card-text text-secondary float-right"></p>
+				    	<i style='font-size:12px' class='fas float-left'>&#xf086; Comments: 10  </i><p class="card-text text-secondary float-left"></p><i style='font-size:12px' class='fas float-left ml-4'> &#xf024; Mark as innapropiate  </i><p class="card-text text-secondary float-left"></p>
+				    </div>
+				</div>
+			</div>
+			<div class="col-1">	
+			</div>
+		</div>
+
+		<div class="row mb-4">
+			<div class="col-1">
+			</div>
+		
+			<div class="col-10">
+				<div class="card">
+					<div class="card-header1">	
+						<h4 style='font-size: 16px'>Comment section</h4>
+				  	</div>
+				  	<% User.all.each do |u| %>
+
+					  	<div class="card-body">
+						  	<div class="card float-left " style="width: 14%" >
+						  		
+							  <div class="card-body float-left" style="height:auto; min-height: 104.9px;">
+							  	<i style='font-size:28px;' class='fas' >&#xf2fe;</i>
+							    <h5 class="card-title" style='font-size: 10px'><%=u.id%></h5>
+							    <h5 class="card-title" style='font-size:9px'><%=u.created_at%></h5>
+							  </div>
+							</div>
+
+							<div class="card float-left " style="width: 86%;"  >
+						  		
+							  <div class="card-body float-left" style="height:auto; min-height: 104.9px;">
+							    <h5 class="card-text" style='font-size: 10px'><%=u.name%><%= link_to 'Edit' , edit_user_path(u.id)%></h5>
+							  </div>
+							  
+							</div>
+							
+						</div>
+					<%end%>
+				</div>	
+
+					
+				</div>
+			</div>
+			<div class="col-1">	
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-1">
+			</div>
+
+			<div class="col-10">
+				<p class="float-right ml-4"><%= link_to 'Back', posts_path %></p>
 
 
-    <%= form_with(model: @user, local: true) do |form| %>
+				
+			</div>
+		</div>
 
-    <style>
-      .my-container{
-        border: 1px solid green;
-      }
-    </style>
-    <div class="container my-container rounded bg-white">
-      <div class="row justify-content-center">
-        <div class="col-7 offset-4  mb-4">
-          <h1>Profile</h1>
-        </div>
-
-        <div class="col-1">
-          <h1><%= link_to 'X', controller:'homea' %></h1>
-        </div>
-      </div>
-
-
-      <div class="row">
-        <div class="col-3">
-          <div class="mb-4">
-              <%= form.label 'Name'%>
-            </div>
-          </div>
-
-          <div class="col-6">
-          <div class="input-group" >
-            <%= form.text_field :name , class:"form-control"%>
-          </div>
-
-        </div>
-        <hr />
-      </div>
-
-      <div class="row">
-        <div class="col-3">
-          <div class="mb-4">
-              <%= form.label 'Last Name'%>
-            </div>
-          </div>
-
-          <div class="col-6">
-          <div class="input-group" >
-            <%= form.text_field :lastname , class:"form-control"%>
-          </div>
-
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-3">
-          <div class="mb-4">
-              <%= form.label 'Email'%>
-            </div>
-          </div>
-
-          <div class="col-6">
-          <div class="input-group" >
-            <%= form.text_field :email , class:"form-control"%>
-          </div>
-
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-3">
-          <div class="mb-4">
-              <%= form.label 'Password'%>
-            </div>
-          </div>
-
-          <div class="col-6">
-          <div class="input-group" >
-            <%= form.password_field :password , class:"form-control"%>
-          </div>
-
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-3">
-          <div class="mb-4">
-              <%= form.label 'Confirm Password'%>
-            </div>
-          </div>
-
-          <div class="col-6">
-          <div class="input-group" >
-            <%= form.password_field :cpassword , class:"form-control"%>
-          </div>
-
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-3">
-          <div class="mb-4">
-            </div>
-          </div>
-
-          <div class="col-4">
-          <div class="actions">
-              <p style=' color: #000; background-color: #FFF; border: 1px solid green ' type="button" class="btn " ><%=link_to 'Edit User', edit_user_path(current_user)%></p>
-            </div>
-
-        </div>
-      </div>
-
-      
-
-
-
-      
-    </div>
-
-
-
-        
-
-
-
-      
-    <% end %>
-  </div>
+	</div>
 </body>
+</html>
+ 
+

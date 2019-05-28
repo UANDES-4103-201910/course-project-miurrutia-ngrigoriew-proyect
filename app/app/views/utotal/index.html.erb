@@ -34,54 +34,6 @@
   </head>
   <body>
   <div class="container bg-grey">
-    <div class="row justify-content-center">
-      <div class="col-12 mb-3">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <a class="navbar-brand" href="#">Oscar</a>
-
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-              <ul class="navbar-nav mr-auto mt-2 mt-lg-0 navbar-right">
-
-                <form class="form-inline my-2 my-lg-0">
-                  <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                </form> 
-                <li class="nav-item active">
-                  <a class="nav-link disabled">Username<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href='http://localhost:3000/'>Log out</a>
-                </li>
-               
-              </ul>
-              
-            </div>
-          </nav>
-      </div>
-    </div>
-
-    <div class="row mb-4">
-      <div class="col-1">
-      </div>
-    
-      <div class="col-10">
-        <div class="btn-group btn-block" role="group" aria-label="Basic example">
-          <a style='width:16.6%; color: #000;'  class="btn btn-secondary" href='http://localhost:3000/homea/index'>Home</a>
-          <a style='width:16.6%; color: #000;'  class="btn btn-secondary" href='http://localhost:3000/posts'>Posts</a>
-          <a style='width:16.6%; color: #000;'  class="btn btn-secondary" href='http://localhost:3000/blacklist/index'>Blacklist</a>
-          <a style='width:16.6%; color: #000;'  class="btn btn-secondary" href='http://localhost:3000/dumpster/index'>Dumpster</a>
-          <a style='width:16.6%; color: #000;'  class="btn btn-secondary" href='http://localhost:3000/utotal/index'>Users</a>
-          <p style='width:16.6%; color: #000;' class="btn btn-secondary" ><%= link_to 'Profile', edit_user_path(current_user) %></p>
-        </div>
-      </div>
-      <div class="col-1">
-        
-      </div>
-    </div>
-
     <div class="row mb-4">
       <div class="col-1">
       </div>
@@ -103,22 +55,24 @@
             <h2> <i style='font-size:32px; padding-left: 3px' class='fas'>&#xf2bd;</i> Users</h2>
             </div>
             <div class="card-body">
-              <div class="card float-left " style="width: 100%" >
+            <% User.all.each do |user| %>
                 
-              <div class="card-body float-left" style="height:auto; min-height: 100px;">
-                <i style='font-size:40px;' class='fas' ></i>
+                <div class="card float-left " style="width: 100%" >
+                  
+                <div class="card-body float-left" style="height:auto; min-height: 100px;">
+                  <i style='font-size:40px;' class='fas' ></i>
+                  <% if user.name == nil%>
+                  <h4 class="card-title">No name</h4>
+                  <%else%>
+                   <h4 class="card-title"><%= user.name%></h4>
+                  <%end%>
+                  <a><%= link_to 'Edit', edit_registration_path(user)%></a>
+                </div>
 
-                 <h4 class="card-title">Maria Ignacia Urrutia</h4>
               </div>
-            </div>
+            <%end%>
             
-            <div class="card float-left " style="width: 100%" >
-              
-            <div class="card-body float-left" style="height:auto; min-height: 100px;">
-              <i style='font-size:40px;' class='fas' ></i>
-              
-               <h4 class="card-title">Nicolas Grigoriew</h4>
-            </div>
+           
             
 
 

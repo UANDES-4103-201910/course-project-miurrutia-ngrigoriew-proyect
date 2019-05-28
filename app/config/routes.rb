@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
 
+  get 'users/index'
+  get 'users/create'
+  get 'users/update'
+  get 'users/show'
+
+  get 'users/destroy'
+  devise_for :users
   get 'atotal/index'
   get 'utotal/index'
   get 'homesa/index'
@@ -7,13 +14,12 @@ Rails.application.routes.draw do
   resources :superadmins
   resources :admins
 
-  get    '/login',   to: 'sessions#new'
+  get    '/login',   to: 'users#sign_in'
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
 
   get 'sessions/new'
   get 'login/index'
-  resources :users
   get 'home/index'
   get 'users/index'
 

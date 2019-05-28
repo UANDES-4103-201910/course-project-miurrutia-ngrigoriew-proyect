@@ -26,7 +26,6 @@
   </head>
 
   <body>
-    <p id="notice"><%= notice %></p>
       <% if flash[:error] %>
         <div class="Alert-bottom alert alert-danger fade in" role="alert"><a class="close" data-dismiss="alert" aria-label="close">x</a> <%= flash[:error] %></div>
       <% elsif flash[:notice] %>
@@ -41,7 +40,7 @@
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
-              <a class="navbar-brand" href="http://localhost:3000/home2/index">Oscar</a>
+              <a class="navbar-brand" href="http://localhost:3000/home/index">Oscar</a>
 
               <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
 
@@ -52,19 +51,20 @@
                     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="border-color:#009330">Search</button>
                   </form>
-                  <% if current_user == nil %>
+                  <% if current_user%>
                     <li class="nav-item active">
-                    <a class="nav-link" href="http://localhost:3000/sessions/new" style="padding: 15px">Log in<span class="sr-only">(current)</span></a>
+                    <p class="card-text" style="padding: 15px"><%=current_user.name%></p>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href='http://localhost:3000/users/new'>Sign up</a>
+                    <p class="nav-link " style="padding-top: 15px"><%= link_to "Log out", destroy_user_session_path, method: :delete %></p>
                     </li>
+                    
                   <%else%>
                     <li class="nav-item active">
-                    <p class="card-text" style="padding: 15px"  ><%=current_user.name%></p>
+                    <a class="nav-link" href="http://localhost:3000/users/sign_in" style="padding: 15px">Log in<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                    <p class="nav-link " style="padding-top: 15px"><%= link_to "Log out", logout_path, method: :delete %></p>
+                    <a class="nav-link" href='http://localhost:3000/users/sign_up'>Sign up</a>
                     </li>
                   <%end%>
                 </ul>
@@ -82,7 +82,7 @@
           <div class="col-3">
           </div>  
           <div class="col-6">
-              <button type="button" href="http://localhost:3000/"class="btn btn-light btn-lg btn-block" style="width: 100%">Home</button>
+              
           </div>
           <div class="col-3">
           </div>
@@ -92,18 +92,18 @@
           <div class="col-6">
             <div class="btn-group btn-block" role="group" aria-label="Basic example">
               <%if current_user.set == nil%>
-                <a style='width:33.3%; color: #000;' class="btn btn-secondary" href='http://localhost:3000/home2/index'>Home</a>
+                <a style='width:33.3%; color: #000;' class="btn btn-secondary" href='http://localhost:3000/home/index'>Home</a>
                 <a style='width:33.3%; color: #000;' class="btn btn-secondary" href='http://localhost:3000/posts'>My Posts</a>
-                <p style='width:33.3%; color: #000;' class="btn btn-secondary" ><%= link_to 'Profile', edit_user_path(current_user) %></p>
+                <p style='width:33.3%; color: #000;' class="btn btn-secondary" ><%= link_to 'Profile', edit_user_registration_path(current_user) %></p>
               <%elsif current_user.set == 1%>
-                <a style='width:16.6%; color: #000;'  class="btn btn-secondary" href='http://localhost:3000/homea/index'>Home</a>
+                <a style='width:16.6%; color: #000;'  class="btn btn-secondary" href='http://localhost:3000/home/index'>Home</a>
                 <a style='width:16.6%; color: #000;'  class="btn btn-secondary" href='http://localhost:3000/posts'>Posts</a>
                 <a style='width:16.6%; color: #000;'  class="btn btn-secondary" href='http://localhost:3000/blacklist/index'>Blacklist</a>
                 <a style='width:16.6%; color: #000;'  class="btn btn-secondary" href='http://localhost:3000/dumpster/index'>Dumpster</a>
                 <a style='width:16.6%; color: #000;'  class="btn btn-secondary" href='http://localhost:3000/utotal/index'>Users</a>
                 <p style='width:16.6%; color: #000;' class="btn btn-secondary" ><%= link_to 'Profile', edit_user_path(current_user) %></p>
               <%elsif current_user.set == 2%>
-                <a style='width:14.285%; color: #000;' class="btn btn-secondary" href='http://localhost:3000/home2/index'>Home</a>
+                <a style='width:14.285%; color: #000;' class="btn btn-secondary" href='http://localhost:3000/home/index'>Home</a>
                 <a style='width:14.285%; color: #000;'  class="btn btn-secondary" href='http://localhost:3000/posts'>Posts</a>
                 <a style='width:14.285%; color: #000;'  class="btn btn-secondary" href='http://localhost:3000/blakclist/index'>Blacklist</a>
                 <a style='width:14.285%; color: #000;'  class="btn btn-secondary" href='http://localhost:3000/dumpster/index'>Dumpster</a>
