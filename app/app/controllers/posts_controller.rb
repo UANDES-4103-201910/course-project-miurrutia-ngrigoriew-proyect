@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
-before_action :authenticate_user!
+	before_action :authenticate_user!
+	before_action :set_post, only: [:upvote,:downvote]
 	def index
     	@us= User.where(["id=?",current_user[:id].to_s])
 		@posts = Post.where(["user_id = ? ", current_user[:id].to_s])
@@ -43,8 +44,22 @@ before_action :authenticate_user!
  
   		redirect_to posts_path
 	end
+
+	#Upvote_from user
+	def upvote
+		@post.upvote_from current_user
+		redirect_to posts_path
+	end
+
+	def downvote
+		@post.downvote_from current_user
+		redirect_to posts_path
+	end
  
 	private
+		def set_post
+			@post = Post.find(params[:id])
+		end
   		def post_params
     		params.require(:post).permit(:title, :description, :city, :status)
   		end
