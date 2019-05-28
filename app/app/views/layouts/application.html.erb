@@ -47,10 +47,13 @@
 
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0 navbar-right">
 
-                  <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="border-color:#009330">Search</button>
-                  </form>
+                  <%= form_tag(search_page_path, :method => "get", class: 'navbar-form navbar-left') do %>  
+                    <div class="input-group"><%= search_field_tag :search, params[:search], placeholder: "Search",class: "form-control" %>  
+                      <div class="input-group-btn"> 
+                      <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="border-color:#009330">Search</button>
+                      </div>  
+                     </div>  
+                  <% end %>
                   <% if current_user%>
                     <li class="nav-item active">
                     <p class="card-text" style="padding: 15px"><%=current_user.name%></p>
