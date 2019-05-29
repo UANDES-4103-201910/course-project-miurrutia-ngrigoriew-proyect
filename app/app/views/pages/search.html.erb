@@ -73,6 +73,23 @@
 
               </div>
             <%end%>
+            <% @locations.each do |location| %>
+                
+                <div class="card float-left " style="width: 100%" >
+                  
+                <div class="card-body float-left" style="height:auto; min-height: 100px;">
+                  <i style='font-size:40px;' class='fas' ></i>
+
+                  <% if location.name == nil%>
+                  <h4 class="card-title">No name</h4>
+                  <%else%>
+                   <h4 class="card-title"><%= location.name%><%= " "%><%= location.lastname%></h4>
+                  <%end%>
+
+                </div>
+
+              </div>
+            <%end%>
             
            
             

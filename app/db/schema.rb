@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_28_204834) do
+ActiveRecord::Schema.define(version: 2019_05_29_175722) do
 
   create_table "abusive_contents", force: :cascade do |t|
     t.integer "user_id"
@@ -114,6 +114,7 @@ ActiveRecord::Schema.define(version: 2019_05_28_204834) do
     t.string "lastname"
     t.integer "phone"
     t.integer "set"
+    t.string "city"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
