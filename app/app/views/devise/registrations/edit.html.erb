@@ -123,27 +123,23 @@
             <div class="row">
               <div class="col-3">
                 <div class="mb-4">
-                  </div>
                 </div>
+              </div>
 
-                <div class="col-4">
+              <div class="col-4">
                 <h4 style="font-size: 12px; color: #C0C0C0" >To make any change you have to confirm your password</h4>
                 <div class="actions">
                     <%= f.submit 'Update'%>
-
-                  </div>
-
+                </div>
               </div>
             </div>
             <h3>Cancel my account</h3>
 
-    <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+            <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
-    <%= link_to "Back", :back %>
-    </div>
-    <% end %>
-
-    
+            <%= link_to "Back", :back %>
+            <% end %>
+          </div>
   </body>
 </html>
 
