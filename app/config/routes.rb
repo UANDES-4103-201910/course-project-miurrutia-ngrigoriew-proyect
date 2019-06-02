@@ -2,7 +2,8 @@ Rails.application.routes.draw do
   resources :users
   get 'users/index'
   get 'users/create'
-  post '/create_user' => 'users#create', as: :create_user
+  get 'users/new'
+  post '/create_user' => 'users#create'
   get 'users/update'
   get 'users/show'
 

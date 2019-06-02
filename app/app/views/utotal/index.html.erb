@@ -41,7 +41,7 @@
         <div class="card">
           <div class="card-header1">  
             <h2> <i style='font-size:32px; padding-left: 3px' class='fas'>&#xf2bd;</i> Users</h2>
-            <h5><i class="float-right"style='font-size:32px; padding-left: 3px' ></i><%= link_to 'New User', users_create_path %></h5>
+            <h5><i class="float-right"style='font-size:32px; padding-left: 3px' ></i><%= link_to 'New User', new_user_path %></h5>
             </div>
             <div class="card-body">
             <% User.all.each do |user| %>

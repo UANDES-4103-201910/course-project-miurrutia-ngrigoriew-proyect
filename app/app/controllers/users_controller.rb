@@ -29,7 +29,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save(user_params)
         flash[:notice] = "Created succesfully"
-        redirect_to @user
+        redirect_to 'http://localhost:3000/utotal/index'
     else
        flash[:error] = "Something is wrong while validating"
        render :new
@@ -65,7 +65,7 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.permit(:name, :last_name, :email, :password, :city, :password_confirmation, :phone)
+      params.require(:user).permit(:name, :last_name, :email, :password, :city, :password_confirmation, :phone)
     end
 
 end
