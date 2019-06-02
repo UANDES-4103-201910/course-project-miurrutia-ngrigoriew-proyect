@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get 'users/destroy'
  devise_for :users, controllers: { omniauth_callbacks: 'user/omniauth_callbacks' }
   get 'atotal/index'
+  get 'atotal/show'
   get 'utotal/index'
   get 'homesa/index'
   get 'homea/index'

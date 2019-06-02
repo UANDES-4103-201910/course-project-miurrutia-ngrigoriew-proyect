@@ -3,131 +3,88 @@
   <head>
     <meta charset="utf-8">
     <title>WebPage</title>
-    
-
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-  <meta name='viewport' content='width=device-width, initial-scale=1'>
-  <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
-  <style>
-    .btn-secondary{
-      background-color:#F5F5F5;
-      color:#000;
-    }
-  </style>
-  <style>
-  .card-header{
-    background-color:#808080;
-    }
-  </style>
-  <style>
-    .card-header1{
-      background-color:#D3D3D3;
-    }
-  </style>
+    <style>
+      .btn-secondary{
+        background-color:#F5F5F5;
+        color:#000;
+      }
+    </style>
+    <style>
+    .card-header{
+      background-color:#808080;
+      }
+    </style>
+    <style>
+      .card-header1{
+        background-color:#D3D3D3;
+      }
+    </style>
   </head>
   <body>
-  <div class="container bg-grey">
-    <div class="row justify-content-center">
-      <div class="col-12 mb-3">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <a class="navbar-brand" href="#">Oscar</a>
-
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-              <ul class="navbar-nav mr-auto mt-2 mt-lg-0 navbar-right">
-
-                <form class="form-inline my-2 my-lg-0">
-                  <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                </form> 
-                <li class="nav-item active">
-                  <a class="nav-link disabled">Username<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href='http://localhost:3000/'>Log out</a>
-                </li>
-               
-              </ul>
-              
-            </div>
-          </nav>
-      </div>
-    </div>
-
-    <div class="row mb-4">
-      <div class="col-1">
-      </div>
-    
-      <div class="col-10">
-        <div class="btn-group btn-block" role="group" aria-label="Basic example">
-		  <a style='width:14.285%; color: #000;' class="btn btn-secondary" href='http://localhost:3000/home2/index'>Home</a>
-		  <a style='width:14.285%; color: #000;'  class="btn btn-secondary" href='http://localhost:3000/posts'>Posts</a>
-		  <a style='width:14.285%; color: #000;'  class="btn btn-secondary" href='http://localhost:3000/blakclist/index'>Blacklist</a>
-		  <a style='width:14.285%; color: #000;'  class="btn btn-secondary" href='http://localhost:3000/dumpster/index'>Dumpster</a>
-		  <a style='width:14.285%; color: #000;'  class="btn btn-secondary" href='http://localhost:3000/utotal/index'>Users</a>
-		  <a style='width:14.285%; color: #000;'  class="btn btn-secondary" href='http://localhost:3000/atotal/index'>Admins</a>
-		  <p style='width:14.285%; color: #000;'  class="btn btn-secondary" ><%= link_to 'Profile', edit_user_path(current_user) %></p>	
+    <div class="container bg-grey">
+      <div class="row mb-4">
+        <div class="col-1">
+        </div>
+        <div class="col-10">
+        </div>
+        <div class="col-1"> 
         </div>
       </div>
-      <div class="col-1">
-        
-      </div>
-    </div>
 
-    <div class="row mb-4">
-      <div class="col-1">
-      </div>
-    
-      <div class="col-10">
-        
-      </div>
-      <div class="col-1"> 
-      </div>
-    </div>
-
-    <div class="row mb-4">
-      <div class="col-1">
-      </div>
-    
-      <div class="col-10">
-        <div class="card">
-          <div class="card-header1">  
-            <h2> <i style='font-size:32px; padding-left: 3px' class='fas'>&#xf508;</i> Admins</h2>
+      <div class="row mb-4">
+        <div class="col-1">
+        </div>
+      
+        <div class="col-10">
+          <div class="card">
+            <div class="card-header1">  
+              <h2> <i style='font-size:32px; padding-left: 3px' class='fas'>&#xf2bd;</i> Admins</h2>
+              <h5><i class="float-right"style='font-size:32px; padding-left: 3px' ></i><%= link_to 'New User', new_user_path %></h5>
             </div>
             <div class="card-body">
-              <div class="card float-left " style="width: 100%" >
-                
-              <div class="card-body float-left" style="height:auto; min-height: 100px;">
-                <i style='font-size:40px;' class='fas' ></i>
-
-                 <h4 class="card-title">Benjamin Fuentes</h4>
+            <% User.all.each do |user| %>
+              <% if user.set == 1%>
+                <div class="card float-left " style="width: 100%" > 
+                <div class="card-body float-left" style="height:auto; min-height: 100px;">
+                  <i style='font-size:40px;' class='fas' ></i>
+                  <% if user.name == nil%>
+                  <h4 class="card-title">No name</h4>
+                  <%else%>
+                   <h4 class="card-title"><%= user.name%></h4>
+                  <%end%>
+                  <%if user.last_sign_in_at==nil%>
+                    <h5>Last sign in : No data</h5>
+                  <%else%>
+                    <h5>Last sign in : <%= user.last_sign_in_at%></h5>
+                  <%end%>
+                  <%if user.set==nil%>
+                    <h5>Role: User</h5>
+                  <%elsif user.set==1%>
+                     <h5>Role: Admin</h5>
+                  <%elsif user.set==2%>
+                     <h5>Role: Super Admin</h5>
+                  <%end%>
+                  |<%= link_to 'Edit', edit_user_path(user)%>| | <%=link_to 'Delete', user_path(user),method: :delete,
+                  data: { confirm: 'Are you sure?' }%>| |<%= link_to 'Show', user%>|
+                  
               </div>
             </div>
+            <%else%>
+            <%end%>
+          <%end%>
+            
           </div>
-         
+        </div>
+        <div class="col-1"> 
         </div>
       </div>
-      <div class="col-1"> 
+
+      <div class="row">
+        <div class="col-1">
+        </div>
+
       </div>
-    </div>
-
-    <div class="row">
-      <div class="col-1">
-      </div>
 
     </div>
-
-  </div>
-</body>
+  </body>
 </html>
-
-

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>WebPage</title>
+    <style>
+      .btn-secondary{
+        background-color:#F5F5F5;
+        color:#000;
+      }
+    </style>
+    <style>
+    .card-header{
+      background-color:#808080;
+      }
+    </style>
+    <style>
+      .card-header1{
+        background-color:#D3D3D3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container bg-grey">
+      <div class="row mb-4">
+        <div class="col-1">
+        </div>
+        <div class="col-10">
+        </div>
+        <div class="col-1"> 
+        </div>
+      </div>
+
+      <div class="row mb-4">
+        <div class="col-1">
+        </div>
+      
+        <div class="col-10">
+          <div class="card">
+            <div class="card-header1">  
+              <h2> <i style='font-size:32px; padding-left: 3px' class='fas'>&#xf2bd;</i> Admin</h2>
+            </div>
+            <div class="card-body">
+
+              <div class="container my-container rounded bg-white">
+                <div class="row justify-content-center">
+                  <div class="col-7 offset-4  mb-4">
+                  </div>
+
+                  <div class="col-1">
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-3">
+                    <div class="mb-4">
+                        <strong>Name: </strong>
+                        <% if @user.name == nil %>
+                            None
+                          <%else%>
+                            <%= @user.name%>
+                          <%end%>
+                      </div>
+                    </div>
+
+                    <div class="col-6">
+                    </div>
+                    <div class="col-3">
+                    </div>
+                </div>
+                <div class="row">
+                  <div class="col-3">
+                      <div class="mb-4">
+                          <strong>Lastname: </strong>
+                          <% if @user.lastname == nil %>
+                            None
+                          <%else%>
+                            <%= @user.lastname%>
+                          <%end%>
+                      </div>
+                    </div>
+
+                    <div class="col-6">
+                    </div>
+                    <div class="col-3">
+                    </div>
+                </div>
+                <div class="row">
+                  <div class="col-3">
+                      <div class="mb-4">
+                          <strong>Email: </strong><%= @user.email%>
+                      </div>
+                    </div>
+
+                    <div class="col-6">
+                    </div>
+                    <div class="col-3">
+                    </div>
+                </div>
+                <div class="row">
+                  <div class="col-3">
+                      <div class="mb-4">
+                          <strong>City: </strong>
+                          <% if @user.city == nil %>
+                            None
+                          <%else%>
+                            <%= @user.city%>
+                          <%end%>
+                      </div>
+                    </div>
+
+                    <div class="col-6">
+                    </div>
+                    <div class="col-3">
+                    </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-3">
+                      <div class="mb-4">
+                          <strong>Role: </strong>Admin
+                      </div>
+                    </div>
+
+                    <div class="col-6">
+                    </div>
+                    <div class="col-3">
+                    </div>
+                </div>
+                <%= link_to 'Back', 'http://localhost:3000/atotal/index' %>
+                
+
+            
+          </div>
+        </div>
+        <div class="col-1"> 
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-1">
+        </div>
+
+      </div>
+
+    </div>
+  </body>
+</html>

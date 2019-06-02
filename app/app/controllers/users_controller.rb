@@ -20,17 +20,30 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
 
   end
-
+  def show
+    @user = User.find(params[:id])
+  end
   # POST /users
   # POST /users.json
   def create
+    set1= params[:user][:set]
     @user = User.new(user_params)
-    if @user.save(user_params)
-        flash[:notice] = "Created succesfully"
-        redirect_to 'http://localhost:3000/utotal/index'
+    if set1==1 && set1==nil
+      if @user.save(user_params)
+        if set1==nil
+          flash[:notice] = "User created succesfully"
+          redirect_to 'http://localhost:3000/utotal/index'
+        else
+          flash[:notice] = "Admin created succesfully"
+          redirect_to 'http://localhost:3000/utotal/index'
+        end
+      else
+         flash[:error] = "Something is wrong while validating"
+         render 'http://localhost:3000/users/new'
+      end
     else
-       flash[:error] = "Something is wrong while validating"
-       render :new
+      flash[:error] = "Cannot create user with invalid set"
+      render 'http://localhost:3000/users/new'
     end
   end
 

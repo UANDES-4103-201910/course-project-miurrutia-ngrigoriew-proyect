@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>WebPage</title>
+    <style>
+      .btn-secondary{
+        background-color:#F5F5F5;
+        color:#000;
+      }
+    </style>
+    <style>
+    .card-header{
+      background-color:#808080;
+      }
+    </style>
+    <style>
+      .card-header1{
+        background-color:#D3D3D3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container bg-grey">
+      <div class="row mb-4">
+        <div class="col-1">
+        </div>
+        <div class="col-10">
+        </div>
+        <div class="col-1"> 
+        </div>
+      </div>
+
+      <div class="row mb-4">
+        <div class="col-1">
+        </div>
+      
+        <div class="col-10">
+          <div class="card">
+            <div class="card-header1">  
+              <h2> <i style='font-size:32px; padding-left: 3px' class='fas'>&#xf2bd;</i> Admin</h2>
+              <h5><i class="float-right"style='font-size:32px; padding-left: 3px' ></i><%= link_to 'New User', new_user_path %></h5>
+            </div>
+            <div class="card-body">
+            <%= @user.name %>
+              <div class="container my-container rounded bg-white">
+                <div class="row justify-content-center">
+                  <div class="col-7 offset-4  mb-4">
+                    <h1>Admin</h1>
+                  </div>
+
+                  <div class="col-1">
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-3">
+                    <div class="mb-4">
+                        <%= user.name%>
+                      </div>
+                    </div>
+
+                    <div class="col-6">
+                    <div class="input-group" >
+                      <h3></h3>
+                    </div>
+
+                  </div>
+                  <hr />
+                </div>
+
+                <div class="row">
+                  <div class="col-3">
+                    <div class="mb-4">
+                        <%= user.lastname%>
+                      </div>
+                    </div>
+
+                    <div class="col-6">
+                    <div class="input-group" >
+
+                    </div>
+                  </div>
+                  </div>
+                
+              </div>
+            
+          </div>
+        </div>
+        <div class="col-1"> 
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-1">
+        </div>
+
+      </div>
+
+    </div>
+  </body>
+</html>
