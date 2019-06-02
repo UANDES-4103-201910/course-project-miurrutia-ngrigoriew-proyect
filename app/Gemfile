@@ -66,6 +66,8 @@ gem 'therubyracer'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'jquery-rails'
+
+gem "paperclip", "~> 6.0.0"
 #Act_as_votable
 
 gem 'acts_as_votable'

@@ -34,6 +34,7 @@
 		
 			<div class="col-10">
 				<div class="card">
+
 					<div class="card-header background-color-light">	
 						<h3><%=@post.title%></h3><i style='font-size:12px' class='fas float-right fixed mt-0'>&#xf086; Share  </i><p class="card-text text-secondary float-right align-top"></p><%= @post.created_at%>
 				  	</div>
@@ -41,7 +42,9 @@
 				  	<div class="card-body justify-content-center">
 				  		<p style="font-size:12px">
 				    	<%=@post.description%></p>
+				    	<%= image_tag @post.avatar.url(:medium) %>
 				    </div>
+				   
 
 				    <div class="card-footer">
 				    	<%= link_to unlike_post_path(@post), class: "like", method: :put do %>
