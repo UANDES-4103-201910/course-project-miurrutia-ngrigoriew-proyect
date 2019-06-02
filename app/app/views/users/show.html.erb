@@ -37,8 +37,12 @@
       
         <div class="col-10">
           <div class="card">
-            <div class="card-header1">  
-              <h2> <i style='font-size:32px; padding-left: 3px' class='fas'>&#xf2bd;</i> Admin</h2>
+            <div class="card-header1">
+              <%if @user.set == nil%>
+                <h2> <i style='font-size:32px; padding-left: 3px' class='fas'>&#xf2bd;</i> User</h2>
+              <%else%>
+                <h2> <i style='font-size:32px; padding-left: 3px' class='fas'>&#xf2bd;</i> Admin</h2>
+              <%end%>
             </div>
             <div class="card-body">
 
@@ -88,18 +92,6 @@
                 <div class="row">
                   <div class="col-3">
                       <div class="mb-4">
-                          <strong>Email: </strong><%= @user.email%>
-                      </div>
-                    </div>
-
-                    <div class="col-6">
-                    </div>
-                    <div class="col-3">
-                    </div>
-                </div>
-                <div class="row">
-                  <div class="col-3">
-                      <div class="mb-4">
                           <strong>City: </strong>
                           <% if @user.city == nil %>
                             None
@@ -114,11 +106,15 @@
                     <div class="col-3">
                     </div>
                 </div>
-
                 <div class="row">
                   <div class="col-3">
                       <div class="mb-4">
-                          <strong>Role: </strong>Admin
+                          <strong>Bio: </strong>
+                          <% if @user.bio == nil %>
+                            None
+                          <%else%>
+                            <%= @user.bio%>
+                          <%end%>
                       </div>
                     </div>
 
@@ -127,7 +123,43 @@
                     <div class="col-3">
                     </div>
                 </div>
-                <%= link_to 'Back', 'http://localhost:3000/atotal/index' %>
+                <div class="row">
+                  <div class="col-3">
+                      <div class="mb-4">
+                          <strong>Email: </strong><%= @user.email%>
+                      </div>
+                    </div>
+
+                    <div class="col-6">
+                    </div>
+                    <div class="col-3">
+                    </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-3">
+                      <div class="mb-4">
+                          <%if @user.set == nil%>
+                            <strong>Role: </strong>User
+                          <%elsif @user.set == 1%>
+                            <strong>Role: </strong>Admin
+                          <%elsif @user.set == 2%>
+                            <strong>Role: </strong>Admin
+
+                          <%end%>
+                      </div>
+                    </div>
+
+                    <div class="col-6">
+                    </div>
+                    <div class="col-3">
+                    </div>
+                </div>
+                <%if @user.set== nil%>
+                  <%= link_to 'Back', 'http://localhost:3000/alpost/index' %>
+                <%else%>
+                  <%= link_to 'Back', 'http://localhost:3000/atotal/index' %>
+                <%end%>
                 
 
             

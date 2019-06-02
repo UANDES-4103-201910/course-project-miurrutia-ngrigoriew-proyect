@@ -36,7 +36,7 @@
 				<div class="card">
 
 					<div class="card-header background-color-light">	
-						<h3><%=@post.title%></h3><i style='font-size:12px' class='fas float-right fixed mt-0'>&#xf086; Share  </i>Author : <%= User.find(@post.user_id).name%></br><p class="card-text text-secondary float-right align-top"></p><%= @post.created_at%>
+						<h3><%=@post.title%></h3><i style='font-size:12px' class='fas float-right fixed mt-0'>&#xf086; Share  </i>Author : <%= link_to User.find(@post.user_id).name , "http://localhost:3000/users/#{@post.user_id}"%></br><p class="card-text text-secondary float-right align-top"></p><%= @post.created_at%>
 				  	</div>
 
 				  	<div class="card-body justify-content-center">
@@ -77,7 +77,7 @@
 						  		
 							  <div class="card-body float-left" style="height:auto; min-height: 104.9px;">
 							  	<i style='font-size:28px;' class='fas' >&#xf2fe;</i>
-							    <h5 class="card-title" style='font-size: 10px'><%=User.find(comment.user_id).name%></h5>
+							    <h5 class="card-title" style='font-size: 10px'><%= link_to User.find(@post.user_id).name , "http://localhost:3000/users/#{@post.user_id}"%></h5>
 							    <h5 class="card-title" style='font-size:9px'><%=comment.created_at%></h5>
 							  </div>
 							</div>
