@@ -77,7 +77,7 @@
 						  		
 							  <div class="card-body float-left" style="height:auto; min-height: 104.9px;">
 							  	<i style='font-size:28px;' class='fas' >&#xf2fe;</i>
-							    <h5 class="card-title" style='font-size: 10px'><%=comment.user_id%></h5>
+							    <h5 class="card-title" style='font-size: 10px'><%=User.find(comment.user_id).name%></h5>
 							    <h5 class="card-title" style='font-size:9px'><%=comment.created_at%></h5>
 							  </div>
 							</div>
