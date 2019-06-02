@@ -1,0 +1,2 @@
+module AlpostHelper
+end

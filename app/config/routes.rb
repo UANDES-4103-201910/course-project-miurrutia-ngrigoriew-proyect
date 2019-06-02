@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'alpost/index'
   get 'users/index'
   get 'users/create'
   get 'users/new'
