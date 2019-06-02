@@ -9,8 +9,6 @@ class UsersController < ApplicationController
 
   # GET /users/1
   # GET /users/1.json
-  def show
-  end
 
   # GET /users/new
   def new
@@ -42,11 +40,11 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     if @user.update(user_params)
       
-      redirect_to 'http://localhost:3000/'
+      redirect_to 'http://localhost:3000/utotal/index'
       flash[:notice] = "Updated succesfully"
     else
       flash[:error] = "Something went wrong"
-      redirect_to :edit
+      redirect_to 'http://localhost:3000/utotal/index'
     end
   end
 

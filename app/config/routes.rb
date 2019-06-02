@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
-  resources :users
+
   get 'users/index'
   get 'users/create'
   get 'users/new'
   post '/create_user' => 'users#create'
   get 'users/update'
-  get 'users/show'
+
 
   get 'users/destroy'
  devise_for :users, controllers: { omniauth_callbacks: 'user/omniauth_callbacks' }
