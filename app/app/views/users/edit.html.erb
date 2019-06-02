@@ -15,28 +15,65 @@
     
     <%= form_with(model: @user, local: true) do |form| %>
   
+    <div class="container my-container rounded bg-white">
+            <div class="row justify-content-center">
+              <div class="col-7 offset-4  mb-4">
+                <h1>Change Password </h1>
 
-	<div class="field">
-    	<%= form.label :password, "New password" %><br />
-    	<% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em><br />
-    	<% end %>
-    	<%= form.password_field :password%>
-  	</div>
+              </div>
 
-	  <div class="field">
-	    <%= form.label :password_confirmation, "Confirm new password" %><br />
-	    <%= form.password_field :password_confirmation%>
-	  </div>
-
-	  <div class="actions">
-	    <%= form.submit "Change my password" %>
-	  </div>
-
-	<% end %>
+              <div class="col-1">
+              </div>
+            </div>
 
 
-    
+            <div class="row">
+              <div class="col-3">
+                <div class="mb-4">
+                    <%= form.label :password, "New password"%>
+                    <% if @minimum_password_length %>
+				    <em>(<%= @minimum_password_length %> characters minimum)</em><br />
+				   	<% end %>
+    				
+                  </div>
+                </div>
+
+                <div class="col-6">
+                <div class="input-group" >
+                  <%= form.password_field :password%>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-3">
+                <div class="mb-4">
+                    <%= form.label :password_confirmation, "Confirm new password"%>
+                  </div>
+                </div>
+
+                <div class="col-6">
+                <div class="input-group" >
+                 <%= form.password_field :password_confirmation%>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-3">
+                <div class="mb-4">
+                  </div>
+                </div>
+
+                <div class="col-6">
+                <div class="actions">
+				<%= form.submit "Change my password" %>
+				</div>
+                </div>
+              </div>
+            </div>
+
+			
+		</div>	  
+		<% end %>   
   </body>
 </html>
 
