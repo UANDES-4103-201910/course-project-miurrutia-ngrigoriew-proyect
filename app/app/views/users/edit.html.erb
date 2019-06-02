@@ -13,7 +13,7 @@
 
   <body>
     
-    <%= form_with(model: User, local: true) do |form| %>
+    <%= form_with(model: @user, local: true) do |form| %>
   
 
 	<div class="field">
@@ -21,12 +21,12 @@
     	<% if @minimum_password_length %>
       <em>(<%= @minimum_password_length %> characters minimum)</em><br />
     	<% end %>
-    	<%= form.password_field :password, autofocus: true, autocomplete: "new-password" %>
+    	<%= form.password_field :password%>
   	</div>
 
 	  <div class="field">
 	    <%= form.label :password_confirmation, "Confirm new password" %><br />
-	    <%= form.password_field :password_confirmation, autocomplete: "off" %>
+	    <%= form.password_field :password_confirmation%>
 	  </div>
 
 	  <div class="actions">

@@ -41,6 +41,7 @@
         <div class="card">
           <div class="card-header1">  
             <h2> <i style='font-size:32px; padding-left: 3px' class='fas'>&#xf2bd;</i> Users</h2>
+            <h5><i class="float-right"style='font-size:32px; padding-left: 3px' ></i><%= link_to 'New User', users_create_path %></h5>
             </div>
             <div class="card-body">
             <% User.all.each do |user| %>
@@ -68,7 +69,10 @@
                     <%if user.set==1%>
                     <%elsif  user.set==2 %>
                     <%elsif user.set== nil%>
-                      <a class="float-right"><%= link_to 'Edit', edit_user_path(user)%></a>
+                      <%= link_to 'Edit', edit_user_path(user)%>|<%=link_to 'Delete', user_path(user),method: :delete,
+                  data: { confirm: 'Are you sure?' }%>
+                       
+
                     <%end%>
                   <%end%>
                   
