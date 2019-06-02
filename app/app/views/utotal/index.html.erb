@@ -68,7 +68,7 @@
                     <%if user.set==1%>
                     <%elsif  user.set==2 %>
                     <%elsif user.set== nil%>
-                      <a class="float-right"><%= link_to 'Edit', edit_registration_path(user)%></a>
+                      <a class="float-right"><%= link_to 'Edit', edit_user_path(user)%></a>
                     <%end%>
                   <%end%>
                   
