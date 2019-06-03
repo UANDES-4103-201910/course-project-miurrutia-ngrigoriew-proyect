@@ -90,7 +90,7 @@
 							  
 							</div>
 							<% if current_user.id == comment.user_id%>
-								<%= link_to 'Edit comment', edit_post_comment_path(comment)%>
+								<%= link_to 'Edit comment'%>
 								<p class="float-right">
 									  <%= link_to 'Destroy Comment', [comment.post, comment],
 									               method: :delete,

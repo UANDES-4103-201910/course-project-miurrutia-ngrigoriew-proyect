@@ -12,8 +12,9 @@
   </head>
 
   <body>
-    
-    <%= form_with(model: @comment, local: true) do |form| %>
+
+
+	<%= form_for([@post, @comment]) do |f| %>
   
     <div class="container my-container rounded bg-white">
             <div class="row justify-content-center">
@@ -36,7 +37,7 @@
 
                 <div class="col-6">
                 <div class="input-group" >
-                  <%= form.text_field :body%>
+                  <%= form.text_area :body%>
                 </div>
               </div>
             </div>

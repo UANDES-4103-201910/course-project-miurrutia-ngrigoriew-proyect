@@ -12,10 +12,14 @@ class CommentsController < ApplicationController
     redirect_to post_path(@post)
     flash[:error]='Comment deleted successfully'
   end
-  
+  def edit
+    @comment = Comment.find(params[:id])
+    @post = Post.find(params[:post_id])
+  end
   def update
-      @post = Post.find(params[:post_id])
-      @comment = @post.comments.update(comment_params)
+      @post = Post.find([:post_id])
+      @comment = Comment.find(params[:id])
+      @comment.update(comment_params)
       redirect_to @post
       flash[:notice]='Comment updated successfully'
 
