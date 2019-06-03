@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>WebPage</title>
+  <style>
+    .my-container{
+      border: 1px solid green;
+    }
+  </style>
+
+  </head>
+
+  <body>
+    
+    <%= form_with(model: @comment, local: true) do |form| %>
+  
+    <div class="container my-container rounded bg-white">
+            <div class="row justify-content-center">
+              <div class="col-7 offset-4  mb-4">
+                <h1>Edit Comment </h1>
+
+              </div>
+
+              <div class="col-1">
+              </div>
+            </div>
+
+
+            <div class="row">
+              <div class="col-3">
+                <div class="mb-4">
+                    <%= form.label :body, "New Body"%>
+                  </div>
+                </div>
+
+                <div class="col-6">
+                <div class="input-group" >
+                  <%= form.text_field :body%>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-3">
+                <div class="mb-4">
+
+                  </div>
+                </div>
+
+                <div class="col-6">
+                  <div class="actions">
+          				<%= form.submit "Update comment" %>
+          			</div>
+                </div>
+              </div>
+            </div>
+		</div>	  
+		<% end %>   
+  </body>
+</html>
+
