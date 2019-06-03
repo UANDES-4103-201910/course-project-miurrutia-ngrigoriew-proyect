@@ -1,20 +1,24 @@
 Members: Nicolas Grigoriew Maria Ignacia Urrutia
 
 Implemented features: 
--Sign up/create user  
+-Sign up/create user
 -User Log in 
 -CRUD POST
 -CRUD User 
--Profile 
--User log out  
--Post for current user
+-CRUD Comments
+-User Administration
+-System Administration
+-User Profile 
+-Posts
+-System Access
+-User Registration
 
 Pending: 
--Search 
--Edit dumpster 
--Edit blacklist 
--Complete fluent navigation 
--Postman
+-Tag user in comments
+-Mark post as innapropiate
+-Follow post
+
+
 
 Basic instructions
 
