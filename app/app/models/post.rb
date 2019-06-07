@@ -11,7 +11,6 @@ class Post < ApplicationRecord
 	validates :description, length: { minimum: 1, message: "can't be blank"}
 	validates :city , length: { minimum: 1, message: "can't be blank"}
 	
-	
 
 
 end
