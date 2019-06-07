@@ -8,6 +8,7 @@ class PagesController < ApplicationController
     		@results = User.all.where("lower(name) LIKE :search", search: @parameter) 
     		@locations = User.all.where("lower(city) LIKE :search", search: @parameter) 
     		@posttitles = Post.all.where(" lower(title) LIKE (?)", "%#{params[:search]}%")
+    		@postdescriptions = Post.all.where(" lower(description) LIKE (?)", "%#{params[:search]}%")
 
   		end  
 	end
