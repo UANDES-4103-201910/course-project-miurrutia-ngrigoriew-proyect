@@ -65,8 +65,12 @@
 
                   <% if result.name == nil%>
                   <h4 class="card-title">No name</h4>
+                  <% elsif result.lastname == nil%>
+                  <i style='font-size:20px'</i> <a <%= link_to result.name, user_path(result) %></a>
                   <%else%>
-                   <h4 class="card-title"><%= result.name%><%= " "%><%= result.lastname%></h4>
+                  <h4 <%=result.lastname.insert(0,' ')%></h4>
+                  
+                   <i style='font-size:20px'</i> <a <%= link_to result.name + result.lastname, user_path(result) %></a>
                   <%end%>
 
                 </div>
@@ -83,7 +87,8 @@
                   <% if location.name == nil%>
                   <h4 class="card-title">No name</h4>
                   <%else%>
-                   <h4 class="card-title"><%= location.name%><%= " "%><%= location.lastname%></h4>
+                  <h4 <%=location.lastname.insert(0,' ')%></h4>
+                   <i style='font-size:20px'</i> <a <%= link_to location.name + location.lastname, user_path(location) %></a>
                   <%end%>
 
                 </div>
@@ -101,7 +106,7 @@
                       <h4 class="card-title">No name</h4>
                     
                     <% else %>
-                      <h4 class="card-title"><%= posttitle.title%></h4>
+                      <i style='font-size:20px'</i> <a <%= link_to posttitle.title, post_path(posttitle) %></a>
                     <% end %>
                 </div>
 
@@ -118,12 +123,30 @@
                       <h4 class="card-title">No name</h4>
                     
                     <% else %>
-                      <h4 class="card-title"><%= postdescription.title%></h4>
+                      <i style='font-size:20px'</i> <a <%= link_to postdescription.title, post_path(postdescription) %></a>
                     <% end %>
                 </div>
 
               </div>
             <%end%>
+             <% @authors.each do |author| %>
+                
+                <div class="card float-left " style="width: 100%" >
+                  
+                <div class="card-body float-left" style="height:auto; min-height: 100px;">
+                  <i style='font-size:40px;' class='fas' ></i>
+
+                    <% if author == nil %>
+                      <h4 class="card-title">No name</h4>
+                    
+                    <% else %>
+                      <i style='font-size:20px'</i> <a <%= link_to author.title, post_path(author) %></a>
+                    <% end %>
+                </div>
+
+              </div>
+            <%end%>
+
 
             
 
