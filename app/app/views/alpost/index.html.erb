@@ -35,10 +35,12 @@
   	                  data: { confirm: 'Are you sure?' }%></p>
   	              <p class="card-text text-secondary float-right "><%=link_to 'Edit Post', edit_post_path(post)%></p>
   	          <%end%>
+            <% if current_user.set == 2 || current_user.set== 1%>
               <%= form_with(model: post, local: true) do |f| %>
                   <%= f.check_box :ds %><span style="color:#C0C0C0">*Check the box to move the post to dumpster</span></br>
                   <%= f.submit "Move to Dumpster" %>
               <%end%>
+            <%end%>
                 <br>
                 <hr style="margin-top:10px; margin-bottom: 5px; width: 90%; border-color: #D0D0D0"/>
             
