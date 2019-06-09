@@ -28,7 +28,7 @@
         <div class="row">
           <div class="col-3">
             <div class="mb-4">
-                <%= f.label 'Name'%>
+                <%= f.label 'Name'%><span style="color:#C0C0C0">*</span>
               </div>
             </div>
 
@@ -44,7 +44,7 @@
         <div class="row">
           <div class="col-3">
             <div class="mb-4">
-                <%= f.label 'Last Name'%>
+                <%= f.label 'Last Name'%><span style="color:#C0C0C0">*</span>
               </div>
             </div>
 
@@ -71,7 +71,7 @@
         <div class="row">
           <div class="col-3">
             <div class="mb-4">
-                <%= f.label :email %>
+                <%= f.label :email %><span style="color:#C0C0C0">*</span>
               </div>
             </div>
 
@@ -85,7 +85,7 @@
         <div class="row">
           <div class="col-3">
             <div class="mb-4">
-                <%= f.label :password %>
+                <%= f.label :password %><span style="color:#C0C0C0">*</span>
                 <% if @minimum_password_length %>
                 <em>(<%= @minimum_password_length %> characters minimum)</em>
                 <% end %>
@@ -103,13 +103,41 @@
         <div class="row">
           <div class="col-3">
             <div class="mb-4">
-                <%= f.label :password_confirmation %>
+                <%= f.label :password_confirmation %><span style="color:#C0C0C0">*</span>
               </div>
             </div>
 
             <div class="col-6">
             <div class="input-group" >
               <%= f.password_field :password_confirmation, autocomplete: "new-password" , class:"form-control"%>
+            </div>
+
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-3">
+            <div class="mb-4">
+              </div>
+            </div>
+
+            <div class="col-6">
+            <div class="input-group" >
+              <%= f.check_box :aup%><%= link_to 'Acceptable Use Policy (AUP)', 'https://www.termsofusegenerator.net/live.php?token=VXy9qF7J6VAGmWbnKNWDPpN5MWr3pbqJ', class:"text-dark" %>
+            </div>
+
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-3">
+            <div class="mb-4">
+              </div>
+            </div>
+
+            <div class="col-6">
+            <div class="input-group" >
+              <%= f.check_box :tos%><%= link_to 'Terms of Service (ToS)', 'https://www.termsofservicegenerator.net/live.php?token=z1O6hT9jQgL2gvgM1gllRLmYpcR838Gt', class:"text-dark" %></br>
+              <span style="color:#C0C0C0">Please accept AUP and ToS to create an account</span></br>
+              <span style="color:#C0C0C0">* Required fields</span>
             </div>
 
           </div>
