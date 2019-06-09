@@ -24,7 +24,7 @@
             <i style='font-size:28px' class='fas'>&#xf1c0;</i>Everything</h2><a style='width:33.3%; color: #000; border: solid #C0C0C0' class="btn btn-secondary float-right" href='http://localhost:3000/posts/new'>New Post</a>
           </div>
           <% Post.all.each do |post| %>
-            <% if post.ds == false %>
+            <% if post.ds == false or post.ds == nil%>
               <div class="card-body">
                 <h2>
                 <i style='font-size:34px' class='far'>&#xf1c5;</i><%= link_to post.title, post_path(post) ,class:"text-dark"%></h2>

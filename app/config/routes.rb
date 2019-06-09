@@ -54,4 +54,6 @@ Rails.application.routes.draw do
   get 'blacklist/index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get '/search' => 'pages#search', :as => 'search_page'
+  get '/search1' => 'pages#search1', :as => 'search1_page'
+  get '/search2' => 'pages#search2', :as => 'search2_page'
 end

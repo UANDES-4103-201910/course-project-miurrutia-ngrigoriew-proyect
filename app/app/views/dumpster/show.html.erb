@@ -31,6 +31,13 @@
           <div class="card-header1">  
             <h4 style='font-size: 16px'>Dumpster</h4>
             </div>
+            <%= form_tag(search1_page_path, :method => "get", class: 'navbar-form navbar-left') do %>  
+                    <div class="input-group"><%= search_field_tag :search1, params[:search1], placeholder: "Dumpster Search",class: "form-control" %>  
+                      <div class="input-group-btn"> 
+                      <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="border-color:#009330">Search Dumpster</button>
+                      </div>  
+                     </div>  
+                  <% end %>
             <div class="card-body">
               <% @posts.each do |post|%>
                 <% if post.ds == true %>

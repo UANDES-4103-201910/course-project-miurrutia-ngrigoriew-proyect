@@ -13,4 +13,28 @@ class PagesController < ApplicationController
 
   		end  
 	end
+  def search1
+
+      if params[:search1].blank?  
+        redirect_to(root_path, alert: "Empty field!") and return
+
+      else  
+          @posttitles = Post.all.where("lower(title) LIKE (?)", "%#{params[:search1]}%")
+      end
+
+ 
+  end
+
+    def search2
+
+      if params[:search2].blank?  
+        redirect_to(root_path, alert: "Empty field!") and return
+
+      else  
+          @results = User.all.where("lower(name) LIKE (?)", "%#{params[:search2]}%") 
+      end
+
+ 
+  end
+
 end
