@@ -1,10 +1,11 @@
 class DumpsterController < ApplicationController
 	def index
 		@dumpsters = Dumpster.all
+		@posts = Post.all
 	end
 
 	def show
-
+		@posts = Post.all
 	end
 
 	def new
