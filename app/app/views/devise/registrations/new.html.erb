@@ -54,16 +54,18 @@
             </div>
           </div>
           </div>
+
         <div class="row">
           <div class="col-3">
             <div class="mb-4">
-                <%= f.label 'City'%>
+                <%= f.label 'City'%><span style="color:#C0C0C0">*Please select your city ( Or nearest city to you )</span>
               </div>
             </div>
 
             <div class="col-6">
             <div class="input-group" >
-              <%= f.text_field :city, class:"form-control"%>
+
+              <%= f.select :city, ["Concepcion","Santiago","Arica","Area51"]%>
             </div>
 
           </div>
