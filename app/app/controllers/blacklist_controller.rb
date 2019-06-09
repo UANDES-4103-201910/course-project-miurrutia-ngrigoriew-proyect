@@ -1,10 +1,11 @@
 class BlacklistController < ApplicationController
 	def index
 		@blacklists = Blacklist.all
+		@users = User.all
 	end
 
 	def show
-
+		@users = User.all
 	end
 
 	def new
@@ -25,13 +26,19 @@ class BlacklistController < ApplicationController
 	end
 
 	def update
-		@blacklist = Blacklist.find(params[:id])
-
-		if @blacklist.update(blacklist_params)
-			redirect_to @blacklist
-		else
-			render 'edit'
-		end
+		@user = User.find(params[:id])
+	    if @user.update(user_params)
+	      if @user.update(bl_params)
+	        redirect_to blacklist_index_path
+	        flash[:notice] = "Restored succesfully"
+	      else
+	        redirect_to 'http://localhost:3000/atotal/index'
+	        flash[:notice] = "Updated succesfully"
+	      end
+	    else
+	      flash[:error] = "Something went wrong"
+	      redirect_to 'http://localhost:3000/utotal/index'
+	    end
 	end
 
 	def destroy

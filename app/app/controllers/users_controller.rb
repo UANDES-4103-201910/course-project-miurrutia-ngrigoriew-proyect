@@ -52,9 +52,21 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
+      if @user.update(bl_params)
+        if @user.bl == true
+
+          redirect_to utotal_index_path
+          flash[:notice] = "Send to blacklist succesfully"
+        else
+          redirect_to blacklist_path
+          flash[:notice] = "User restored succesfully"
+        end
+      else
+        redirect_to utotal_index_path
+        flash[:notice] = "Updated succesfully"
+      end
       
-      redirect_to 'http://localhost:3000/utotal/index'
-      flash[:notice] = "Updated succesfully"
+      
     else
       flash[:error] = "Something went wrong"
       redirect_to 'http://localhost:3000/utotal/index'
@@ -77,6 +89,10 @@ class UsersController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
       params.require(:user).permit(:name, :last_name, :email, :password, :city, :password_confirmation, :phone , :set)
+    end
+
+    def bl_params
+      params.require(:user).permit(:bl)
     end
 
 end

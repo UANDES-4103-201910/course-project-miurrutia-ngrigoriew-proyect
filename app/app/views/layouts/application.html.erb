@@ -18,10 +18,6 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
     <style>
-      .btn-secondary{
-        background-color:#F5F5F5;
-        color:#000;
-      }
     </style>
   </head>
 
@@ -58,7 +54,7 @@
                     <p class="card-text" style="padding: 15px"><%=current_user.name%></p>
                     </li>
                     <li class="nav-item">
-                    <p class="nav-link " style="padding-top: 15px"><%= link_to "Log out", destroy_user_session_path, method: :delete %></p>
+                    <p class="nav-link " style="padding-top: 15px"><%= link_to "Log out", destroy_user_session_path, method: :delete, class: "text-dark"%></p>
                     </li>
                     
                   <%else%>
@@ -99,24 +95,24 @@
           <div class="col-6">
             <div class="btn-group btn-block" role="group" aria-label="Basic example">
               <%if current_user.set == nil%>
-                <a style='width:33.3%; color: #000;' class="btn btn-secondary" href='http://localhost:3000/home/index'>Home</a>
-                <a style='width:33.3%; color: #000;' class="btn btn-secondary" href='http://localhost:3000/posts'>My Posts</a>
-                <p style='width:33.3%; color: #000;' class="btn btn-secondary" ><%= link_to 'Profile', edit_user_registration_path(current_user) %></p>
+                <a style='width:33.3%; color: #000;' class="btn btn-light" href='http://localhost:3000/home/index'>Home</a>
+                <a style='width:33.3%; color: #000;' class="btn btn-light" href='http://localhost:3000/posts'>My Posts</a>
+                <%= link_to 'Profile', edit_user_registration_path(current_user), class: "btn btn-light", style:'width:33.3%; color: #000;' %>
               <%elsif current_user.set == 1%>
-                <a style='width:16.6%; color: #000;'  class="btn btn-secondary" href='http://localhost:3000/home/index'>Home</a>
-                <a style='width:16.6%; color: #000;'  class="btn btn-secondary" href='http://localhost:3000/posts'>My Posts</a>
-                <a style='width:16.6%; color: #000;'  class="btn btn-secondary" href='http://localhost:3000/blacklist/index'>Blacklist</a>
-                <a style='width:16.6%; color: #000;'  class="btn btn-secondary" href='http://localhost:3000/dumpster/index'>Dumpster</a>
-                <a style='width:16.6%; color: #000;'  class="btn btn-secondary" href='http://localhost:3000/utotal/index'>Users</a>
-                <p style='width:16.6%; color: #000;' class="btn btn-secondary" ><%= link_to 'Profile', edit_registration_path(current_user) %></p>
+                <a style='width:16.6%; color: #000;'  class="btn btn-light" href='http://localhost:3000/home/index'>Home</a>
+                <a style='width:16.6%; color: #000;'  class="btn btn-light" href='http://localhost:3000/posts'>My Posts</a>
+                <a style='width:16.6%; color: #000;'  class="btn btn-light" href='http://localhost:3000/blacklist/index'>Blacklist</a>
+                <a style='width:16.6%; color: #000;'  class="btn btn-light" href='http://localhost:3000/dumpster/index'>Dumpster</a>
+                <a style='width:16.6%; color: #000;'  class="btn btn-light" href='http://localhost:3000/utotal/index'>Users</a>
+                <%= link_to 'Profile', edit_user_registration_path(current_user), class: "btn btn-light", style:'width:16.6%; color: #000;' %>
               <%elsif current_user.set == 2%>
-                <a style='width:14.285%; color: #000;' class="btn btn-secondary" href='http://localhost:3000/home/index'>Home</a>
-                <a style='width:14.285%; color: #000;'  class="btn btn-secondary" href='http://localhost:3000/posts'>Posts</a>
-                <a style='width:14.285%; color: #000;'  class="btn btn-secondary" href='http://localhost:3000/blacklist/index'>Blacklist</a>
-                <a style='width:14.285%; color: #000;'  class="btn btn-secondary" href='http://localhost:3000/dumpster/index'>Dumpster</a>
-                <a style='width:14.285%; color: #000;'  class="btn btn-secondary" href='http://localhost:3000/utotal/index'>Users</a>
-                <a style='width:14.285%; color: #000;'  class="btn btn-secondary" href='http://localhost:3000/atotal/index'>Admins</a>
-                <p style='width:14.285%; color: #000;'  class="btn btn-secondary" ><%= link_to 'Profile', edit_registration_path(current_user) %></p>
+                <a style='width:14.285%; color: #000;' class="btn btn-light" href='http://localhost:3000/home/index'>Home</a>
+                <a style='width:14.285%; color: #000;'  class="btn btn-light" href='http://localhost:3000/posts'>Posts</a>
+                <a style='width:14.285%; color: #000;'  class="btn btn-light" href='http://localhost:3000/blacklist/index'>Blacklist</a>
+                <a style='width:14.285%; color: #000;'  class="btn btn-light" href='http://localhost:3000/dumpster/index'>Dumpster</a>
+                <a style='width:14.285%; color: #000;'  class="btn btn-light" href='http://localhost:3000/utotal/index'>Users</a>
+                <a style='width:14.285%; color: #000;'  class="btn btn-light" href='http://localhost:3000/atotal/index'>Admins</a>
+                <%= link_to 'Profile', edit_user_registration_path(current_user), class: "btn btn-light", style:'width:14.285%; color: #000;' %>
               <%end%>
 
 

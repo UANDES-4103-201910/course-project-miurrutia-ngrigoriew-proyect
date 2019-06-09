@@ -33,7 +33,18 @@ class PostsController < ApplicationController
   		@post = Post.find(params[:id])
  
   		if @post.update(post_params)
-    		redirect_to @post
+    		if @post.update(ds_params)
+		    	if @post.ds == true
+		          redirect_to alpost_index_path
+		          flash[:notice] = "Post moved to dumpster succesfully"
+		        else
+		          redirect_to dumpster_path
+		          flash[:notice] = "Post restored succesfully"
+		        end
+	      else
+	        redirect_to alpost_index_path
+	        flash[:notice] = "Updated succesfully"
+	      end
   		else
     		render 'edit'
   		end
@@ -64,4 +75,8 @@ class PostsController < ApplicationController
   		def post_params
     		params.require(:post).permit(:title, :description, :city, :status, :avatar, :file)
   		end
+
+  		def ds_params
+	      params.require(:post).permit(:ds)
+	    end
 end

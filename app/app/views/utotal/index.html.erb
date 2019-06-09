@@ -69,11 +69,17 @@
                     <%if user.set==1%>
                     <%elsif  user.set==2 %>
                     <%elsif user.set== nil%>
-                      <%= link_to 'Edit', edit_user_path(user)%>|<%=link_to 'Delete', user_path(user),method: :delete,
-                  data: { confirm: 'Are you sure?' }%>
-                       
-
+                      <%=link_to 'Delete', user_path(user),method: :delete,
+                  data: { confirm: 'Are you sure?' }, style:"float:right"%><span style="float:right">|</span><%= link_to 'Edit', edit_user_path(user), style:"float:right"%>
+                  <%end%>
+                  <% if user.set == nil%>
+                    <%= form_with(model: user, local: true) do |f| %>
+                      <%= f.check_box :bl %><span style="color:#C0C0C0">*Check the box to send the user to the blacklist</span></br>
+                      <%= f.submit "Send to blacklist" %>
                     <%end%>
+                  <%end%>
+
+                    
                   <%end%>
                   
                 </div>

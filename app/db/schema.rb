@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_08_224536) do
+ActiveRecord::Schema.define(version: 2019_06_09_054001) do
 
   create_table "abusive_contents", force: :cascade do |t|
     t.integer "user_id"
@@ -76,10 +76,7 @@ ActiveRecord::Schema.define(version: 2019_06_08_224536) do
     t.string "avatar_content_type"
     t.integer "avatar_file_size"
     t.datetime "avatar_updated_at"
-    t.string "file_file_name"
-    t.string "file_content_type"
-    t.integer "file_file_size"
-    t.datetime "file_updated_at"
+    t.boolean "ds"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
@@ -130,6 +127,7 @@ ActiveRecord::Schema.define(version: 2019_06_08_224536) do
     t.integer "avatar_file_size"
     t.datetime "avatar_updated_at"
     t.text "bio"
+    t.boolean "bl"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

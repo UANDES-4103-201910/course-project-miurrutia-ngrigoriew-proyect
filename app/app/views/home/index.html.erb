@@ -3,19 +3,10 @@
   <head>
     <meta charset="utf-8">
     <title>WebPage</title>
-    
-
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-		  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-	<meta name='viewport' content='width=device-width, initial-scale=1'>
-	<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
   </head>
+  <style>
+
+  </style>
   <body>
   	
 
@@ -35,11 +26,11 @@
 			  		</div>
 			  	<div class="card-body">
 			  		<h2>
-			    	<i style='font-size:34px' class='far'>&#xf1c5;</i> <a class="card-title" href='http://localhost:3000/posts'><%= link_to 'Watch out in parking lot', post_path(2) %></a></h2>
-			    	<p class="card-text text-secondary">Many cars without handbrake 05-08-2019</p>
+			    	<i style='font-size:34px' class='far'>&#xf1c5;</i><%= link_to Post.find(2).title, post_path(2) , class: "text-dark" , style:'color: dark;'  %></h2>
+			    	<p class="card-text text-secondary"><%= Post.find(2).description%></p>
 			    	<p style='color:#000;font-size:12px;' class="card-text float-left">Unsolved</p>
 
-			    	<i style='font-size:12px' class='fas float-right'>|  &#xf164;  Upvotes: 123 </i><p class="card-text text-secondary float-right"></p>
+			    	<i style='font-size:12px' class='fas float-right'>|  &#xf164; <%= Post.find(2).get_upvotes.size%></i><p class="card-text text-secondary float-right"></p>
 			    	<i style='font-size:12px' class='fas float-right'>&#xf086; Comments: 2134  </i><p class="card-text text-secondary float-right"></p>
 			    	
 			    </div>
@@ -62,22 +53,22 @@
 			  	<ul class="list-group list-group-flush">
 				    <li class="list-group-item">
 				    	<div class="card-body">
-				    		<h2><i style='font-size:34px' class='far'>&#xf0c5;</i> <a class="card-title" ><%= link_to 'Everything','http://localhost:3000/alpost/index'%></a></h2>
-				    		<i style='font-size:12px' class='fas float-right'>  &#xf02c; Posts: 1342</i><p class="card-text text-secondary float-right"></p> 	
+				    		<h2><i style='font-size:34px' class='far'>&#xf0c5;</i><%= link_to 'Everything','http://localhost:3000/alpost/index' , class: "text-dark"%></h2>
+				    		<i style='font-size:12px' class='fas float-right'>  &#xf02c;Posts: 1342</i><p class="card-text text-secondary float-right"></p> 	
 				    		 	
 			    			    	
 			    		</div>
 					</li>
 				    <li class="list-group-item">
 				    	<div class="card-body">
-			    			<h2><i style='font-size:34px' class='far'>&#xf0c5;</i> <a class="card-title" > <%= link_to 'Universidad de los Andes','http://localhost:3000/alpost/index'%></a></h2>
+			    			<h2><i style='font-size:34px' class='far'>&#xf0c5;</i><%= link_to 'Universidad de los Andes','http://localhost:3000/alpost/index', class: "text-dark"%></h2>
 			    			<i style='font-size:12px' class='fas float-right'>  &#xf02c; Posts: 1031</i><p class="card-text text-secondary float-right"></p> 
 			    	
 			    		</div>
 					</li>
 				    <li class="list-group-item">
 				    	<div class="card-body">
-			    			<h2><i style='font-size:34px' class='far'>&#xf0c5;</i> <a class="card-title" > <%= link_to 'Public transportation','http://localhost:3000/alpost/index'%></a></h2>
+			    			<h2><i style='font-size:34px' class='far'>&#xf0c5;</i><%= link_to 'Public transportation','http://localhost:3000/alpost/index',class: "text-dark"%></h2>
 			    			<i style='font-size:12px' class='fas float-right'>  &#xf02c; Posts: 1124</i><p class="card-text text-secondary float-right"></p> 
 			    	
 			    		</div>
