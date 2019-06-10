@@ -77,6 +77,8 @@ class UsersController < ApplicationController
           redirect_to utotal_index_path
           flash[:notice] = "Updated succesfully"
         end
+
+      
     else
       flash[:error] = "Something went wrong"
       redirect_to 'http://localhost:3000/utotal/index'

@@ -15,7 +15,7 @@ class User < ApplicationRecord
 			user.name = auth.info.name
 			user.password = Devise.friendly_token[0, 20]
 			user.aup = true
-			user.terms = true
+			user.tos = true
 		end
 	end
 	validates :aup, inclusion: { in: [ true] }
