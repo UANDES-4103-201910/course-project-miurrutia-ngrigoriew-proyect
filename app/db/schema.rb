@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_09_075210) do
+ActiveRecord::Schema.define(version: 2019_06_09_054001) do
 
   create_table "abusive_contents", force: :cascade do |t|
     t.integer "user_id"
@@ -105,6 +105,8 @@ ActiveRecord::Schema.define(version: 2019_06_09_075210) do
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
+    t.boolean "aup", default: false
+    t.boolean "tos", default: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -128,8 +130,6 @@ ActiveRecord::Schema.define(version: 2019_06_09_075210) do
     t.datetime "avatar_updated_at"
     t.text "bio"
     t.boolean "bl"
-    t.boolean "aup"
-    t.boolean "tos"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
