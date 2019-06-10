@@ -51,22 +51,32 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1.json
   def update
     @user = User.find(params[:id])
+    p1 = User.find(params[:id]).name
+    p2 = User.find(params[:id]).lastname
+    p3 = User.find(params[:id]).email
+    p4 = User.find(params[:id]).password
+    p5 = User.find(params[:id]).phone
+    p6 = User.find(params[:id]).set
+    p7 = User.find(params[:id]).bl
     if @user.update(user_params)
-      if @user.update(bl_params)
-        if @user.bl == true
+        if @user.update(bl_params)
+          if p1 == @user.name && p2 == @user.lastname && p3 == @user.email && p4 == @user.password && p5 == @user.phone && p6 == @user.set && p7 == @user.bl
+            redirect_to atotal_index_path
+            flash[:notice] = "Geofence updated succesfully"
+          else
+            if @user.bl == true
 
-          redirect_to utotal_index_path
-          flash[:notice] = "Send to blacklist succesfully"
+              redirect_to utotal_index_path
+              flash[:notice] = "Send to blacklist succesfully"
+            else
+              redirect_to blacklist_path
+              flash[:notice] = "User restored succesfully"
+            end
+          end
         else
-          redirect_to blacklist_path
-          flash[:notice] = "User restored succesfully"
+          redirect_to utotal_index_path
+          flash[:notice] = "Updated succesfully"
         end
-      else
-        redirect_to utotal_index_path
-        flash[:notice] = "Updated succesfully"
-      end
-      
-      
     else
       flash[:error] = "Something went wrong"
       redirect_to 'http://localhost:3000/utotal/index'

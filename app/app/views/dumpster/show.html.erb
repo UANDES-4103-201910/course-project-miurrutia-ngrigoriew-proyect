@@ -40,28 +40,30 @@
                   <% end %>
             <div class="card-body">
               <% @posts.each do |post|%>
-                <% if post.ds == true %>
-                  <div class="card float-left " style="width: 14%; min-height: 140px; margin-bottom: 5px" >
-                    
-                    <div class="card-body float-left" style="height:auto; ">
-                      <i style='font-size:28px;' class='fas' >&#xf2fe;</i>
-                      <h5 class="card-text" style='font-size: 10px'><%= link_to User.find(post.user_id).name+User.find(post.user_id).lastname, "http://localhost:3000/users/#{post.user_id}", class:"text-dark"%></h5>
-                    </div>
-                  </div>
-
-                  <div class="card float-left " style="width: 86%;  min-height: 125px; margin-bottom: 10px"  >
+                <% if post.city == current_user.city || current_user.set == 2%>
+                  <% if post.ds == true %>
+                    <div class="card float-left " style="width: 14%; min-height: 140px; margin-bottom: 5px" >
                       
-                    <div class="card-body float-left" style="height:auto; min-height: 125px; margin-bottom: 5px">
-                      <h5 class="card-text" style='font-size: 30px'>
-                        <%= link_to post.title , post_path(post), class:"text-dark"%></h5>
-                        <%= form_with(model: post, local: true, html: { method: :put }) do |f| %>
-                        <%= f.check_box :ds , style:"margin-left: 9px"%><span style="color:#C0C0C0">*Uncheck the box to restore the user</span></br>
-                      <%= f.submit "Restore" , style:"margin-left: 9px"%>
-                      <%end%>
-                      
-
+                      <div class="card-body float-left" style="height:auto; ">
+                        <i style='font-size:28px;' class='fas' >&#xf2fe;</i>
+                        <h5 class="card-text" style='font-size: 10px'><%= link_to User.find(post.user_id).name+User.find(post.user_id).lastname, "http://localhost:3000/users/#{post.user_id}", class:"text-dark"%></h5>
+                      </div>
                     </div>
-                  </div>
+
+                    <div class="card float-left " style="width: 86%;  min-height: 125px; margin-bottom: 10px"  >
+                        
+                      <div class="card-body float-left" style="height:auto; min-height: 125px; margin-bottom: 5px">
+                        <h5 class="card-text" style='font-size: 30px'>
+                          <%= link_to post.title , post_path(post), class:"text-dark"%></h5>
+                          <%= form_with(model: post, local: true, html: { method: :put }) do |f| %>
+                          <%= f.check_box :ds , style:"margin-left: 9px"%><span style="color:#C0C0C0">*Uncheck the box to restore the user</span></br>
+                        <%= f.submit "Restore" , style:"margin-left: 9px"%>
+                        <%end%>
+                        
+
+                      </div>
+                    </div>
+                  <%end%>
                 <%end%>
               <%end%>
             </div>

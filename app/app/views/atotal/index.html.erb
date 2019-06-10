@@ -39,7 +39,7 @@
           <div class="card">
             <div class="card-header1">  
               <h2> <i style='font-size:32px; padding-left: 3px' class='fas'>&#xf2bd;</i> Admins</h2>
-              <h5><i class="float-right"style='font-size:32px; padding-left: 3px' ></i><%= link_to 'New User', new_user_path %></h5>
+              <h5><i class="float-right"style='font-size:32px; padding-left: 3px' ></i><%= link_to 'New Admin', new_user_path, class:"display btn-outline-dark" %></h5>
             </div>
             <div class="card-body">
             <% User.all.each do |user| %>
@@ -63,6 +63,11 @@
                      <h5>Role: Admin</h5>
                   <%elsif user.set==2%>
                      <h5>Role: Super Admin</h5>
+                  <%end%>
+                  <%= form_with(model: user, local: true) do |f| %>
+                    <%= f.label 'Geofence :'%>
+
+                    <%= f.select :city, ["None","Concepcion","Santiago","Arica","Islas Malvinas"]%><%= f.submit 'Update'%></br><span style="color:#C0C0C0">* To remove privileges from admin set geofence to None</span>
                   <%end%>
                   |<%= link_to 'Edit', edit_user_path(user)%>| | <%=link_to 'Delete', user_path(user),method: :delete,
                   data: { confirm: 'Are you sure?' }%>| |<%= link_to 'Show', user%>|

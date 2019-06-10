@@ -44,23 +44,25 @@
                   <% end %>
             <div class="card-body">
             <% @users.each do |u| %>
-              <% if u.bl == true %>
-                <div class="card float-left " style="width: 14%" >
-                  <div class="card-body float-left" style="height:auto; min-height: 125px;">
-                    <i style='font-size:68px' class='fas' >&#xf2fe;</i>
+              <% if u.city == current_user.city || current_user.set == 2%>
+                <% if u.bl == true %>
+                  <div class="card float-left " style="width: 14%" >
+                    <div class="card-body float-left" style="height:auto; min-height: 125px;">
+                      <i style='font-size:68px' class='fas' >&#xf2fe;</i>
+                    </div>
                   </div>
-                </div>
-                <div class="card float-left " style="width: 86%" >
-                  
-                  <div class="cardfloat-left" style="height:auto; min-height: 125px;">
-                    <i style='font-size:40px;' class='fas' ></i>
-                      <h5 class="card-title" style='font-size: 20px; margin-left: 9px'><%= link_to User.find(u.id).name+ User.find(u.id).lastname , "http://localhost:3000/users/#{u.id}" , class:"text-dark", style:"color:dark"%></h5>
-                      <%= form_with(model: u, local: true, html: { method: :put }) do |f| %>
-                        <%= f.check_box :bl , style:"margin-left: 9px"%><span style="color:#C0C0C0">*Uncheck the box to restore the user</span></br>
-                      <%= f.submit "Restore" , style:"margin-left: 9px"%>
-                    <%end%>
+                  <div class="card float-left " style="width: 86%" >
+                    
+                    <div class="cardfloat-left" style="height:auto; min-height: 125px;">
+                      <i style='font-size:40px;' class='fas' ></i>
+                        <h5 class="card-title" style='font-size: 20px; margin-left: 9px'><%= link_to User.find(u.id).name+ User.find(u.id).lastname , "http://localhost:3000/users/#{u.id}" , class:"text-dark", style:"color:dark"%></h5>
+                        <%= form_with(model: u, local: true, html: { method: :put }) do |f| %>
+                          <%= f.check_box :bl , style:"margin-left: 9px"%><span style="color:#C0C0C0">*Uncheck the box to restore the user</span></br>
+                        <%= f.submit "Restore" , style:"margin-left: 9px"%>
+                      <%end%>
+                    </div>
                   </div>
-                </div>
+                <%end%>
               <%end%>
             <%end%>
 

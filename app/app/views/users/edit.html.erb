@@ -18,7 +18,7 @@
     <div class="container my-container rounded bg-white">
             <div class="row justify-content-center">
               <div class="col-7 offset-4  mb-4">
-                <h1>Change Password </h1>
+                <h1>Edit Section </h1>
 
               </div>
 
@@ -58,6 +58,20 @@
               </div>
             </div>
             <div class="row">
+          <div class="col-3">
+            <div class="mb-4">
+                <%= form.label 'Geofence'%><span style="color:#C0C0C0">*To modify geofence select a different option of the list</span>
+              </div>
+            </div>
+
+            <div class="col-6">
+            <div class="input-group" >
+              <%= form.select :city, ["None", "Concepcion","Santiago","Arica","Islas Malvinas"]%>
+            </div>
+
+          </div>
+        </div>
+            <div class="row">
               <div class="col-3">
                 <div class="mb-4">
 
@@ -66,7 +80,7 @@
 
                 <div class="col-6">
                   <div class="actions">
-          				  <%= form.submit "Change my password" %>
+          				  <%= form.submit "Update params" %>
           				</div>
                 </div>
               </div>

@@ -24,27 +24,29 @@
             <i style='font-size:28px' class='fas'>&#xf1c0;</i>Everything</h2><a style='width:33.3%; color: #000; border: solid #C0C0C0' class="btn btn-secondary float-right" href='http://localhost:3000/posts/new'>New Post</a>
           </div>
           <% Post.all.each do |post| %>
-            <% if post.ds == false or post.ds == nil%>
-              <div class="card-body">
-                <h2>
-                <i style='font-size:34px' class='far'>&#xf1c5;</i><%= link_to post.title, post_path(post) ,class:"text-dark"%></h2>
-                <p class="card-text text-secondary " style="max-width: 80%; max-height: 30px;"  ><%=post.description%></p>
-                <h5 class="card-text text-secondary " style="max-width: 80%; max-height: 30px;"  >Author : <%=User.find(post.user_id).name%></h5>
-                <%if current_user.id == post.user_id%>
-  	              <p class="card-text text-secondary float-right ml-4"><%=link_to 'Delete Post', post_path(post),method: :delete,
-  	                  data: { confirm: 'Are you sure?' }%></p>
-  	              <p class="card-text text-secondary float-right "><%=link_to 'Edit Post', edit_post_path(post)%></p>
-  	          <%end%>
-            <% if current_user.set == 2 || current_user.set== 1%>
-              <%= form_with(model: post, local: true) do |f| %>
-                  <%= f.check_box :ds %><span style="color:#C0C0C0">*Check the box to move the post to dumpster</span></br>
-                  <%= f.submit "Move to Dumpster" %>
+            <%if post.city == current_user.city || current_user.set == 2 || current_user.set == nil%>
+              <% if post.ds == false or post.ds == nil%>
+                <div class="card-body">
+                  <h2>
+                  <i style='font-size:34px' class='far'>&#xf1c5;</i><%= link_to post.title, post_path(post) ,class:"text-dark"%></h2>
+                  <p class="card-text text-secondary " style="max-width: 80%; max-height: 30px;"  ><%=post.description%></p>
+                  <h5 class="card-text text-secondary " style="max-width: 80%; max-height: 30px;"  >Author : <%=User.find(post.user_id).name%></h5>
+                  <%if current_user.id == post.user_id%>
+    	              <p class="card-text text-secondary float-right ml-4"><%=link_to 'Delete Post', post_path(post),method: :delete,
+    	                  data: { confirm: 'Are you sure?' }%></p>
+    	              <p class="card-text text-secondary float-right "><%=link_to 'Edit Post', edit_post_path(post)%></p>
+    	          <%end%>
+              <% if current_user.set == 2 || current_user.set== 1%>                
+                <%= form_with(model: post, local: true) do |f| %>
+                    <%= f.check_box :ds %><span style="color:#C0C0C0">*Check the box to move the post to dumpster</span></br>
+                    <%= f.submit "Move to Dumpster" %>
+                <%end%>
               <%end%>
-            <%end%>
-                <br>
-                <hr style="margin-top:10px; margin-bottom: 5px; width: 90%; border-color: #D0D0D0"/>
-            
-              </div>
+                  <br>
+                  <hr style="margin-top:10px; margin-bottom: 5px; width: 90%; border-color: #D0D0D0"/>
+              
+                </div>
+              <%end%>
             <%end%>
           <%end%>
       </div>

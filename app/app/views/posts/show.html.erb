@@ -36,7 +36,7 @@
 				<div class="card">
 
 					<div class="card-header background-color-light">	
-						<h3><%=@post.title%></h3><i style='font-size:12px' class='fas float-right fixed mt-0'>&#xf086; Share  </i>Author : <%= link_to User.find(@post.user_id).name , "http://localhost:3000/users/#{@post.user_id}"%></br><p class="card-text text-secondary float-right align-top"></p><%= @post.created_at%>
+						<h3><%=@post.title%></h3><i style='font-size:12px' class='fas float-right fixed mt-0'>&#xf086; Share  </i>Author : <%= link_to User.find(@post.user_id).name , "http://localhost:3000/users/#{@post.user_id}"%></br><p class="card-text text-secondary float-right align-top"></p><span>Location: </span><%= @post.city%></br><span>Created at: </span><%= @post.created_at%>
 				  	</div>
 
 				  	<div class="card-body justify-content-center">
@@ -45,7 +45,7 @@
 				    	<%= image_tag @post.avatar.url(:medium) %>
 
 				    </div>
-				   
+				   	
 
 				    <div class="card-footer">
 				    	<%= link_to unlike_post_path(@post), class: "like", method: :put do %>
