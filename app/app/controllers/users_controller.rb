@@ -62,7 +62,7 @@ class UsersController < ApplicationController
         if @user.update(bl_params)
           if p1 == @user.name && p2 == @user.lastname && p3 == @user.email && p4 == @user.password && p5 == @user.phone && p6 == @user.set && p7 == @user.bl
             redirect_to atotal_index_path
-            flash[:notice] = "Geofence updated succesfully"
+            flash[:notice] = "Updated succesfully"
           else
             if @user.bl == true
 
