@@ -16,6 +16,7 @@ Implemented features:
 -Dumpster ( Everything required )
 -Search
 -Geofence ( Aproximation )
+- Aup and ToS
 
 Pending: 
 -Tag user in comments
