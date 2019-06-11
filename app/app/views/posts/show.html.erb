@@ -43,6 +43,7 @@
 				  		<p style="font-size:12px">
 				    	<%=@post.description%></p>
 				    	<%= image_tag @post.avatar.url(:medium) %>
+				    	<%= @post.file.url(:medium)%>
 
 				    </div>
 				   	
@@ -91,7 +92,7 @@
 							  
 							</div>
 							<% if current_user.id == comment.user_id%>
-								<%= link_to 'Edit comment'%>
+								<%= link_to 'Edit comment', edit_post_comment_path(@post, comment.id)%>
 								<p class="float-right">
 									  <%= link_to 'Destroy Comment', [comment.post, comment],
 									               method: :delete,

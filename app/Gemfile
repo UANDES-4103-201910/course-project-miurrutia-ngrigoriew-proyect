@@ -71,4 +71,7 @@ gem "paperclip", "~> 6.0.0"
 #Act_as_votable
 
 gem 'acts_as_votable'
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
+gem 'wkhtmltopdf-binary-edge'
 

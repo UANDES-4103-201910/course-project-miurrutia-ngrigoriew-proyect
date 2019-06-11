@@ -43,6 +43,11 @@ Rails.application.routes.draw do
     end
   end
 
+  resources  :posts do
+  member do
+    resources :comments
+  end
+end
   root 'home#index'
 
   get 'home2/index'
