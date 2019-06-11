@@ -12,6 +12,10 @@ Implemented features:
 -Posts
 -System Access
 -User Registration
+-Blacklist ( Everything required )
+-Dumpster ( Everything required )
+-Search
+-Geofence ( Aproximation )
 
 Pending: 
 -Tag user in comments
