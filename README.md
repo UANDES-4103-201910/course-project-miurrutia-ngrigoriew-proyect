@@ -1,27 +1,27 @@
 Members: Nicolas Grigoriew Maria Ignacia Urrutia
 
 Implemented features: 
--Sign up/create user
--User Log in 
--CRUD POST
--CRUD User 
--CRUD Comments
--User Administration
--System Administration
--User Profile 
--Posts
--System Access
--User Registration
--Blacklist ( Everything required )
--Dumpster ( Everything required )
--Search
--Geofence ( Aproximation )
+- Sign up/create user
+- User Log in 
+- CRUD POST
+- CRUD User 
+- CRUD Comments
+- User Administration
+- System Administration
+- User Profile 
+- Posts
+- System Access
+- User Registration
+- Blacklist ( Everything required )
+- Dumpster ( Everything required )
+- Search
+- Geofence ( Aproximation )
 - Aup and ToS
 
 Pending: 
--Tag user in comments
--Mark post as innapropiate
--Follow post
+- Tag user in comments
+- Mark post as innapropiate
+- Follow post
 
 
 
