@@ -11,6 +11,7 @@ user2 = User.create(name:"Nicolas", lastname:"Grigoriew", phone:987654321, email
 user3 = User.create(name:"Martin", lastname:"Sanchez", phone:987654321, email:"ex1@miuandes.cl", password:"nicolas12345",set:nil, city:"Santiago", bl: true, aup: true , tos: true)
 user4 = User.create(name:"Josefina", lastname:"Concha", phone:987654321, email:"ex2@miuandes.cl", password:"nicolas12345",set:nil, city:"Concepcion", bl: false, aup: true , tos: true)
 user5 = User.create(name:"Mauricio", lastname:"Valenzuela", phone:987654321, email:"ex3@miuandes.cl", password:"nicolas12345",set:nil, city:"Santiago", bl: false, aup: true , tos: true)
+user5 = User.create(name:"Esteban", lastname:"Paredes", phone:987654321, email:"ng@miuandes.cl", password:"catolica2",set:nil, city:"Santiago", bl: false, aup: true , tos: true)
 admin1 = User.create(name:"Benjamin", lastname:"Fuentes", email:"admin@miuandes.cl", password:"hola123456",set:1, city:"Santiago", bl: false, aup: true , tos: true)
 superadmin1 = User.create(name:"Sofia", lastname:"Pavicevic", email:"sadmin@miuandes.cl", password:"hola654321",set:2, city:"Arica", bl: false, aup: true , tos: true)
 

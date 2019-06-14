@@ -27,9 +27,9 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     set1= params[:user][:set]
-    @user = User.new(user_params)
-    if set1==1 && set1==nil
-      if @user.save(user_params)
+    @user = User.new(user_params4)
+    if set1==1 || set1==nil
+      if @user.save(user_params4)
         if set1==nil
           flash[:notice] = "User created succesfully"
           redirect_to 'http://localhost:3000/utotal/index'
@@ -39,11 +39,11 @@ class UsersController < ApplicationController
         end
       else
          flash[:error] = "Something is wrong while validating"
-         render 'http://localhost:3000/users/new'
+         redirect_to 'http://localhost:3000/users/new'
       end
     else
       flash[:error] = "Cannot create user with invalid set"
-      render 'http://localhost:3000/users/new'
+      redirect_to 'http://localhost:3000/users/new'
     end
   end
 
@@ -69,8 +69,13 @@ class UsersController < ApplicationController
               redirect_to utotal_index_path
               flash[:notice] = "Send to blacklist succesfully"
             else
-              redirect_to blacklist_path
-              flash[:notice] = "User restored succesfully"
+              if @user.password == p4
+                redirect_to blacklist_path
+                flash[:notice] = "User restored succesfully"
+              else
+                redirect_to utotal_index_path
+                flash[:notice] = " Password changed succesfully"
+              end
             end
           end
         else
@@ -100,7 +105,11 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:name, :last_name, :email, :password, :city, :password_confirmation, :phone , :set , :aup, :tos)
+      params.require(:user).permit(:name, :lastname, :email, :password, :city, :password_confirmation, :phone , :set , :aup, :tos)
+    end
+
+    def user_params4
+      params.require(:user).permit(:name, :lastname, :email, :password, :city, :password_confirmation).merge(aup: true, tos: true)
     end
 
     def bl_params
