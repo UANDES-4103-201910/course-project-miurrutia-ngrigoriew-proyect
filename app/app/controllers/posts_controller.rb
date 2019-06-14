@@ -82,12 +82,12 @@ class PostsController < ApplicationController
 	#Upvote_from user
 	def upvote
 		@post.upvote_from current_user
-		redirect_to posts_path
+		redirect_to @post
 	end
 
 	def downvote
 		@post.downvote_from current_user
-		redirect_to posts_path
+		redirect_to @post
 	end
  
 	private
