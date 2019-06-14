@@ -43,7 +43,12 @@
 				  		<p style="font-size:12px">
 				    	<%=@post.description%></p>
 				    	<%= image_tag @post.avatar.url(:medium) %>
-				    	<iframe src= <%= @post.file.url.html_safe %>  </iframe>
+				    	<% if @post.file? %>
+								
+						<iframe src= <%= @post.file.url%>  </iframe>>
+						
+						<%end%>
+				    	
 
 				    </div>
 				   	
